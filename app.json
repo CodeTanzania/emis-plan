@@ -1,0 +1,36 @@
+{
+  "name": "emis-plan",
+  "description": "WIP",
+  "repository": "https://github.com/CodeTanzania/emis-plan.git",
+  "keywords": [
+    "codetanzania",
+    "emis",
+    "emis-module",
+    "incident",
+    "type",
+    "hazard",
+    "peril",
+    "family",
+    "emergency",
+    "risk",
+    "classification",
+    "plan",
+    "activity",
+    "task",
+    "sop"
+  ],
+  "addons": [
+    "mongolab"
+  ],
+  "env":
+  {
+    "NPM_CONFIG_PRODUCTION":
+    {
+      "value": "false"
+    },
+    "YARN_PRODUCTION":
+    {
+      "value": "false"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "emis-plan",
+  "title": "EMIS - Plan",
+  "url": "https://emis-plan.herokuapp.com/v1",
+  "sampleUrl": "https://emis-plan.herokuapp.com/v1",
+  "template":
+  {
+    "withCompare": true,
+    "withGenerator": true
+  }
+}

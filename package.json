@@ -1,0 +1,94 @@
+{
+  "name": "@codetanzania/emis-plan",
+  "version": "1.0.0",
+  "description": "WIP",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test",
+    "integration": "grunt integration",
+    "dev": "BASE_PATH=./examples node ./examples/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodeTanzania/emis-plan.git"
+  },
+  "keywords": [
+    "codetanzania",
+    "emis",
+    "emis-module",
+    "incident",
+    "type",
+    "hazard",
+    "peril",
+    "family",
+    "emergency",
+    "risk",
+    "classification",
+    "plan",
+    "activity",
+    "task",
+    "sop"
+  ],
+  "contributors": [{
+    "name": "lykmapipo",
+    "email": "lallyelias87@gmail.com",
+    "url": "https://github.com/lykmapipo"
+  }],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodeTanzania/emis-plan/issues",
+    "email": "lallyelias87@gmail.com"
+  },
+  "homepage": "https://github.com/CodeTanzania/emis-plan",
+  "sandbox": {
+    "url": "https://emis-plan.herokuapp.com",
+    "apiDoc": "https://codetanzania.github.io/emis-plan/",
+    "client_id": "",
+    "client_secret": "",
+    "urls": [{
+      "resource": "IncidentType",
+      "link": "https://emis-plan.herokuapp.com/v1/plans",
+      "scopes": [
+        "plan:*"
+      ],
+      "methods": [
+        "get",
+        "post",
+        "put",
+        "patch"
+      ]
+    }]
+  },
+  "devDependencies": {
+    "@benmaruchu/faker": "^4.2.1",
+    "chai": "^4.2.0",
+    "grunt": "^1.0.3",
+    "grunt-apidoc": "^0.11.0",
+    "grunt-contrib-jshint": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-mocha-test": "^0.13.3",
+    "jshint-stylish": "^2.2.1",
+    "mocha": "^5.2.0",
+    "mongoose": "^5.3.0",
+    "sinon": "^6.3.4",
+    "sinon-chai": "^3.2.0",
+    "sinon-mongoose": "^2.2.1",
+    "superagent": "^4.0.0-beta.5",
+    "supertest": "^3.3.0"
+  },
+  "dependencies": {
+    "@codetanzania/majifix-common": "^0.10.0",
+    "@lykmapipo/express-common": "^0.9.1",
+    "async": "^2.6.1",
+    "express": "^4.16.3",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "mongoose-locale-schema": "^0.2.0",
+    "mongoose-rest-actions": "^0.18.0",
+    "randomcolor": "^0.5.3"
+  },
+  "engines": {
+    "node": ">=8.11.1",
+    "npm": ">=5.6.0"
+  }
+}
