@@ -80,6 +80,7 @@
     "supertest": "^3.3.0"
   },
   "dependencies": {
+    "@codetanzania/emis-incident-type": "^1.0.1",
     "@codetanzania/majifix-common": "^0.11.0",
     "@lykmapipo/env": "^0.3.1",
     "@lykmapipo/express-common": "^0.9.1",
