@@ -59,6 +59,7 @@ It will be nice, if you open an issue first so that we can know what is going on
 
 ## References
 - [Disaster](https://en.wikipedia.org/wiki/Disaster)
+- [Disaster and Emergency Planning for Preparedness, Response, and Recovery](http://naturalhazardscience.oxfordre.com/view/10.1093/acrefore/9780199389407.001.0001/acrefore-9780199389407-e-12)
 
 ## Licence
 
