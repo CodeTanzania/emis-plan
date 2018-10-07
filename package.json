@@ -81,6 +81,7 @@
   },
   "dependencies": {
     "@codetanzania/majifix-common": "^0.11.0",
+    "@lykmapipo/env": "^0.3.1",
     "@lykmapipo/express-common": "^0.9.1",
     "async": "^2.6.1",
     "express": "^4.16.3",
