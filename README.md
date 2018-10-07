@@ -64,7 +64,8 @@ It will be nice, if you open an issue first so that we can know what is going on
 - [Contingency Plan](https://en.wikipedia.org/wiki/Contingency_plan)
 - [Emergency Procedure](https://en.wikipedia.org/wiki/Emergency_procedure)
 
-## Licence
+
+## License
 
 The MIT License (MIT)
 
