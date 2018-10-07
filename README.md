@@ -4,7 +4,7 @@
 [![Dependencies Status](https://david-dm.org/CodeTanzania/emis-plan/status.svg?style=flat-square)](https://david-dm.org/CodeTanzania/emis-plan)
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/CodeTanzania/emis-plan/tree/develop)
 
-> WIP
+A representation of written set of instructions that outlines what stakeholders and others should do in event of emergency(or disaster).
 
 ## Domain Model
 
@@ -59,7 +59,10 @@ It will be nice, if you open an issue first so that we can know what is going on
 
 ## References
 - [Disaster](https://en.wikipedia.org/wiki/Disaster)
+- [Emergency Management](https://en.wikipedia.org/wiki/Emergency_management)
 - [Disaster and Emergency Planning for Preparedness, Response, and Recovery](http://naturalhazardscience.oxfordre.com/view/10.1093/acrefore/9780199389407.001.0001/acrefore-9780199389407-e-12)
+- [Contingency Plan](https://en.wikipedia.org/wiki/Contingency_plan)
+- [Emergency Procedure](https://en.wikipedia.org/wiki/Emergency_procedure)
 
 ## Licence
 
