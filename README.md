@@ -4,7 +4,7 @@
 [![Dependencies Status](https://david-dm.org/CodeTanzania/emis-plan/status.svg?style=flat-square)](https://david-dm.org/CodeTanzania/emis-plan)
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/CodeTanzania/emis-plan/tree/develop)
 
-A representation of written set of instructions that outlines what stakeholders and others should do in event of emergency(or disaster).
+A representation of written set of activities and procedures that outlines(or guides) what stakeholders and others should do in emergency(or disaster) event.
 
 ## Domain Model
 

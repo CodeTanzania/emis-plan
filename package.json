@@ -1,7 +1,7 @@
 {
   "name": "@codetanzania/emis-plan",
   "version": "1.0.0",
-  "description": "WIP",
+  "description": "A representation of written set of activities and procedures that outlines(or guides) what stakeholders and others should do in emergency(or disaster) event.",
   "main": "index.js",
   "scripts": {
     "test": "grunt test",
@@ -17,16 +17,15 @@
     "emis",
     "emis-module",
     "incident",
-    "type",
     "hazard",
-    "peril",
-    "family",
     "emergency",
     "risk",
-    "classification",
     "plan",
+    "contingency",
     "activity",
+    "action",
     "task",
+    "procedures",
     "sop"
   ],
   "contributors": [
@@ -73,15 +72,15 @@
     "grunt-mocha-test": "^0.13.3",
     "jshint-stylish": "^2.2.1",
     "mocha": "^5.2.0",
-    "mongoose": "^5.3.0",
-    "sinon": "^6.3.4",
+    "mongoose": "^5.3.1",
+    "sinon": "^6.3.5",
     "sinon-chai": "^3.2.0",
     "sinon-mongoose": "^2.2.1",
     "superagent": "^4.0.0-beta.5",
     "supertest": "^3.3.0"
   },
   "dependencies": {
-    "@codetanzania/majifix-common": "^0.10.0",
+    "@codetanzania/majifix-common": "^0.11.0",
     "@lykmapipo/express-common": "^0.9.1",
     "async": "^2.6.1",
     "express": "^4.16.3",
