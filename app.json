@@ -1,6 +1,6 @@
 {
   "name": "emis-plan",
-  "description": "A representation of written set of activities and procedures that outlines(or guides) what stakeholders and others should do in emergency(or disaster) event.",
+  "description": "A representation of written set of activities and procedures that guides what stakeholders what to do in emergency event.",
   "repository": "https://github.com/CodeTanzania/emis-plan.git",
   "keywords": [
     "codetanzania",
