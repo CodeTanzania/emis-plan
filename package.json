@@ -28,11 +28,13 @@
     "procedures",
     "sop"
   ],
-  "contributors": [{
-    "name": "lykmapipo",
-    "email": "lallyelias87@gmail.com",
-    "url": "https://github.com/lykmapipo"
-  }],
+  "contributors": [
+    {
+      "name": "lykmapipo",
+      "email": "lallyelias87@gmail.com",
+      "url": "https://github.com/lykmapipo"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CodeTanzania/emis-plan/issues",
@@ -41,12 +43,13 @@
   "homepage": "https://github.com/CodeTanzania/emis-plan",
   "sandbox": {
     "url": "https://emis-plan.herokuapp.com",
-    "schema": "https://emis-plan.herokuapp.com/v1/plans/schema",
     "apidoc": "https://lykmapipo.github.io/plan/",
     "client_id": "",
     "client_secret": "",
-    "urls": [{
+    "urls": [
+      {
         "resource": "Plan",
+        "schema": "https://emis-plan.herokuapp.com/v1/plans/schema",
         "link": "https://emis-plan.herokuapp.com/v1/plans",
         "scopes": [
           "plan:*"
@@ -60,9 +63,24 @@
       },
       {
         "resource": "Activity",
-        "link": "https://emis-plan.herokuapp.com/v1/actitiviess",
+        "schema": "https://emis-plan.herokuapp.com/v1/activities/schema",
+        "link": "https://emis-plan.herokuapp.com/v1/activities",
         "scopes": [
-          "actitivies:*"
+          "activity:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
+      },
+      {
+        "resource": "Procedure",
+        "schema": "https://emis-plan.herokuapp.com/v1/procedures/schema",
+        "link": "https://emis-plan.herokuapp.com/v1/procedures",
+        "scopes": [
+          "procedure:*"
         ],
         "methods": [
           "get",

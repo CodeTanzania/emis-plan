@@ -17,6 +17,7 @@ const { getStrings } = env;
 const {
   Plan,
   Activity,
+  Procedure,
   info,
   app
 } = require(path.join(__dirname, '..'));
@@ -29,6 +30,12 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 function boot() {
 
   async.waterfall([
+
+    function clearProcedures(next) {
+      Procedure.deleteMany(function ( /*error, results*/ ) {
+        next();
+      });
+    },
 
     function clearActivities(next) {
       Activity.deleteMany(function ( /*error, results*/ ) {
@@ -67,6 +74,15 @@ function boot() {
         activities[index].plan = plan;
       });
       Activity.insertMany(activities, next);
+    },
+
+    function seedProcedures(activities, next) {
+      const procedures = Procedure.fake(20);
+      _.forEach(activities, function (activity, index) {
+        procedures[index].activity = activity;
+        procedures[index].number = (index % 2) + 1;
+      });
+      Procedure.insertMany(procedures, next);
     }
 
   ], function (error, results) {

@@ -68,11 +68,14 @@ const planRouter =
   require(path.join(__dirname, 'lib', 'plan.http.router'));
 const activityRouter =
   require(path.join(__dirname, 'lib', 'activity.http.router'));
+const procedureRouter =
+  require(path.join(__dirname, 'lib', 'procedure.http.router'));
 
 
 /* export plan router */
 exports.planRouter = planRouter;
 exports.activityRouter = activityRouter;
+exports.procedureRouter = procedureRouter;
 
 
 /* export app */
@@ -81,6 +84,7 @@ Object.defineProperty(exports, 'app', {
     /* @todo bind oauth middlewares authenticate, token, authorize */
     app.mount(planRouter);
     app.mount(activityRouter);
+    app.mount(procedureRouter);
     return app;
   }
 });
