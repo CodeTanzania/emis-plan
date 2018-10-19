@@ -43,7 +43,7 @@ function boot() {
     },
 
     function seedIncidentTypes(next) {
-      const incidentTypes = IncidentType.fake(10);
+      const incidentTypes = IncidentType.fake(20);
       IncidentType.insertMany(incidentTypes, next);
     },
 
