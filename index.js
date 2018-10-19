@@ -53,19 +53,26 @@ exports.info = info;
 
 /* import models */
 const Plan = require(path.join(__dirname, 'lib', 'plan.model'));
+const Activity = require(path.join(__dirname, 'lib', 'activity.model'));
+const Procedure = require(path.join(__dirname, 'lib', 'procedure.model'));
 
 
 /* export models */
 exports.Plan = Plan;
+exports.Activity = Activity;
+exports.Procedure = Procedure;
 
 
 /* import routers */
 const planRouter =
   require(path.join(__dirname, 'lib', 'plan.http.router'));
+const activityRouter =
+  require(path.join(__dirname, 'lib', 'activity.http.router'));
 
 
 /* export plan router */
-exports.router = exports.planRouter = planRouter;
+exports.planRouter = planRouter;
+exports.activityRouter = activityRouter;
 
 
 /* export app */
@@ -73,6 +80,7 @@ Object.defineProperty(exports, 'app', {
   get() {
     /* @todo bind oauth middlewares authenticate, token, authorize */
     app.mount(planRouter);
+    app.mount(activityRouter);
     return app;
   }
 });

@@ -28,13 +28,11 @@
     "procedures",
     "sop"
   ],
-  "contributors": [
-    {
-      "name": "lykmapipo",
-      "email": "lallyelias87@gmail.com",
-      "url": "https://github.com/lykmapipo"
-    }
-  ],
+  "contributors": [{
+    "name": "lykmapipo",
+    "email": "lallyelias87@gmail.com",
+    "url": "https://github.com/lykmapipo"
+  }],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CodeTanzania/emis-plan/issues",
@@ -47,12 +45,24 @@
     "apidoc": "https://lykmapipo.github.io/plan/",
     "client_id": "",
     "client_secret": "",
-    "urls": [
-      {
+    "urls": [{
         "resource": "Plan",
         "link": "https://emis-plan.herokuapp.com/v1/plans",
         "scopes": [
           "plan:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
+      },
+      {
+        "resource": "Activity",
+        "link": "https://emis-plan.herokuapp.com/v1/actitiviess",
+        "scopes": [
+          "actitivies:*"
         ],
         "methods": [
           "get",

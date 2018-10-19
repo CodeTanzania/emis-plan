@@ -16,7 +16,7 @@ const { IncidentType } = require('@codetanzania/emis-incident-type');
 const { getStrings } = env;
 const {
   Plan,
-  planRouter,
+  Activity,
   info,
   app
 } = require(path.join(__dirname, '..'));
@@ -29,6 +29,12 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 function boot() {
 
   async.waterfall([
+
+    function clearActivities(next) {
+      Activity.deleteMany(function ( /*error, results*/ ) {
+        next();
+      });
+    },
 
     function clearPlans(next) {
       Plan.deleteMany(function ( /*error, results*/ ) {
@@ -53,6 +59,14 @@ function boot() {
         plans[index].incidentType = incidentType;
       });
       Plan.insertMany(plans, next);
+    },
+
+    function seedActivities(plans, next) {
+      const activities = Activity.fake(20);
+      _.forEach(plans, function (plan, index) {
+        activities[index].plan = plan;
+      });
+      Activity.insertMany(activities, next);
     }
 
   ], function (error, results) {
