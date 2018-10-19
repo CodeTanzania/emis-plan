@@ -6,6 +6,9 @@
 
 A representation of written set of activities and procedures that outlines(or guides) what stakeholders and others should do in emergency(or disaster) event.
 
+[Demo](https://emis-plan.herokuapp.com/v1/plans)
+
+
 ## Domain Model
 
 ![EMIS Plan Domain Model](https://raw.githubusercontent.com/CodeTanzania/emis-plan/develop/specifications/planv0.1.0.png)
