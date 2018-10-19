@@ -103,4 +103,18 @@ describe('Procedure Schema', () => {
     expect(description.options.fake).to.exist;
   });
 
+  it('should have number field', () => {
+    const number = Procedure.path('number');
+
+    expect(number).to.exist;
+    expect(number).to.be.instanceof(Schema.Types.Number);
+    expect(number.options).to.exist;
+    expect(number.options).to.be.an('object');
+    expect(number.options.type).to.exist;
+    expect(number.options.min).to.be.exist;
+    expect(number.options.max).to.be.exist;
+    expect(number.options.index).to.be.true;
+    expect(number.options.fake).to.exist;
+  });
+
 });
