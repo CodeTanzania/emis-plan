@@ -11,7 +11,7 @@ A representation of written set of activities and procedures that outlines(or gu
 
 ## Domain Model
 
-![EMIS Plan Domain Model](https://raw.githubusercontent.com/CodeTanzania/emis-plan/develop/specifications/planv0.1.0.png)
+![EMIS Plan Domain Model](https://raw.githubusercontent.com/CodeTanzania/emis-plan/develop/specifications/plan.model.png)
 
 ## Requirements
 
