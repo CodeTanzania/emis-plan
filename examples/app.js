@@ -3,7 +3,7 @@
 
 /* ensure mongodb uri */
 process.env.MONGODB_URI =
-  (process.env.MONGODB_URI || 'mongodb://localhost/plan');
+  (process.env.MONGODB_URI || 'mongodb://localhost/emis-plan');
 
 
 /* dependencies */
@@ -12,8 +12,11 @@ const _ = require('lodash');
 const async = require('async');
 const mongoose = require('mongoose');
 const { env } = require('@codetanzania/majifix-common');
-const { IncidentType } = require('@codetanzania/emis-incident-type');
 const { getStrings } = env;
+const {
+  IncidentType,
+  incidentTypeRouter
+} = require('@codetanzania/emis-incident-type');
 const {
   Plan,
   Activity,
@@ -92,6 +95,8 @@ function boot() {
       response.status(200);
       response.json(info);
     });
+
+    app.mount(incidentTypeRouter);
 
     /* fire the app */
     app.start(function (error, env) {
