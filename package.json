@@ -88,6 +88,20 @@
           "put",
           "patch"
         ]
+      },
+      {
+        "resource": "IncidentType",
+        "schema": "https://emis-plan.herokuapp.com/v1/incidentypes/schema",
+        "link": "https://emis-incidentype.herokuapp.com/v1/incidentypes",
+        "scopes": [
+          "incidentype:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
       }
     ]
   },
