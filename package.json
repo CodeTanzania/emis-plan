@@ -92,7 +92,7 @@
       {
         "resource": "IncidentType",
         "schema": "https://emis-plan.herokuapp.com/v1/incidenttypes/schema",
-        "link": "https://emis-incidenttype.herokuapp.com/v1/incidenttypes",
+        "link": "https://emis-plan.herokuapp.com/v1/incidenttypes",
         "scopes": [
           "incidenttype:*"
         ],

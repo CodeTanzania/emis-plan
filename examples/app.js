@@ -83,8 +83,6 @@ function boot() {
 
   ], function (error, results) {
 
-    console.log(error);
-
     /* expose module info */
     app.get('/', function (request, response) {
       response.status(200);
