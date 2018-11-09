@@ -91,10 +91,10 @@
       },
       {
         "resource": "IncidentType",
-        "schema": "https://emis-plan.herokuapp.com/v1/incidentypes/schema",
-        "link": "https://emis-incidentype.herokuapp.com/v1/incidentypes",
+        "schema": "https://emis-plan.herokuapp.com/v1/incidenttypes/schema",
+        "link": "https://emis-incidenttype.herokuapp.com/v1/incidenttypes",
         "scopes": [
-          "incidentype:*"
+          "incidenttype:*"
         ],
         "methods": [
           "get",

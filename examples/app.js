@@ -52,19 +52,12 @@ function boot() {
       });
     },
 
-    function clearIncidentTypes(next) {
-      IncidentType.deleteMany(function ( /*error, results*/ ) {
-        next();
-      });
-    },
-
     function seedIncidentTypes(next) {
-      const incidentTypes = IncidentType.fake(20);
-      IncidentType.insertMany(incidentTypes, next);
+      IncidentType.seed(next);
     },
 
     function seedPlans(incidentTypes, next) {
-      const plans = Plan.fake(20);
+      const plans = Plan.fake(incidentTypes.length);
       _.forEach(incidentTypes, function (incidentType, index) {
         plans[index].incidentType = incidentType;
       });
@@ -72,7 +65,7 @@ function boot() {
     },
 
     function seedActivities(plans, next) {
-      const activities = Activity.fake(20);
+      const activities = Activity.fake(plans.length);
       _.forEach(plans, function (plan, index) {
         activities[index].plan = plan;
       });
@@ -80,7 +73,7 @@ function boot() {
     },
 
     function seedProcedures(activities, next) {
-      const procedures = Procedure.fake(20);
+      const procedures = Procedure.fake(activities.length);
       _.forEach(activities, function (activity, index) {
         procedures[index].activity = activity;
         procedures[index].number = (index % 2) + 1;
@@ -89,6 +82,8 @@ function boot() {
     }
 
   ], function (error, results) {
+
+    console.log(error);
 
     /* expose module info */
     app.get('/', function (request, response) {
