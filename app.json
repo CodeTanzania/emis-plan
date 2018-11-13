@@ -19,7 +19,8 @@
     "sop"
   ],
   "addons": [
-    "mongolab"
+    "mongolab",
+    "heroku-redis"
   ],
   "env":
   {
@@ -30,30 +31,6 @@
     "YARN_PRODUCTION":
     {
       "value": "false"
-    },
-    "SMTP_HOST":
-    {
-      "value": ""
-    },
-    "SMTP_PORT":
-    {
-      "value": ""
-    },
-    "SMTP_USERNAME":
-    {
-      "value": ""
-    },
-    "SMTP_PASSWORD":
-    {
-      "value": ""
-    },
-    "SMTP_SECURE":
-    {
-      "value": ""
-    },
-    "SMTP_FROM":
-    {
-      "value": ""
     }
   }
 }
