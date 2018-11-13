@@ -11,18 +11,23 @@ const path = require('path');
 const _ = require('lodash');
 const async = require('async');
 const mongoose = require('mongoose');
-const { env } = require('@codetanzania/majifix-common');
-const { getStrings } = env;
+const app = require('@lykmapipo/express-common');
+const { Permission, permissionRouter } = require('@lykmapipo/permission');
+const { Role, roleRouter } = require('@codetanzania/emis-role');
+const { Party, partyRouter } = require('@codetanzania/emis-stakeholder');
+const { Alert, alertRouter } = require('@codetanzania/emis-alert');
 const {
   IncidentType,
   incidentTypeRouter
 } = require('@codetanzania/emis-incident-type');
 const {
   Plan,
+  planRouter,
   Activity,
+  activityRouter,
   Procedure,
-  info,
-  app
+  procedureRouter,
+  info
 } = require(path.join(__dirname, '..'));
 
 
@@ -30,9 +35,43 @@ const {
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 
 
+/* mount routers */
+app.mount(permissionRouter);
+app.mount(roleRouter);
+app.mount(partyRouter);
+app.mount(alertRouter);
+app.mount(planRouter);
+app.mount(activityRouter);
+app.mount(procedureRouter);
+
+/* seed and start */
 function boot() {
 
   async.waterfall([
+
+    function seedPermissions(next) {
+      Permission.seed(function ( /*error, results*/ ) {
+        next();
+      });
+    },
+
+    function seedRoles(next) {
+      Role.seed(function ( /*error, results*/ ) {
+        next();
+      });
+    },
+
+    function seedParties(next) {
+      Party.seed(function ( /*error, results*/ ) {
+        next();
+      });
+    },
+
+    function seedAlerts(next) {
+      Alert.seed(function ( /*error, results*/ ) {
+        next();
+      });
+    },
 
     function clearProcedures(next) {
       Procedure.deleteMany(function ( /*error, results*/ ) {
