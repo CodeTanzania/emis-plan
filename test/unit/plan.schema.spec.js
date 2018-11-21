@@ -6,6 +6,7 @@ const path = require('path');
 const { expect } = require('chai');
 const { Schema } = require('mongoose');
 const { IncidentType } = require('@codetanzania/emis-incident-type');
+const { Party } = require('@codetanzania/emis-stakeholder');
 const { Plan } = require(path.join(__dirname, '..', '..'));
 
 
@@ -23,6 +24,21 @@ describe('Plan Schema', () => {
     expect(incidentType.options.ref).to.be.equal(IncidentType.MODEL_NAME);
     expect(incidentType.options.index).to.be.true;
     expect(incidentType.options.autopopulate).to.exist;
+  });
+
+  it('should have owner field', () => {
+    const owner = Plan.path('owner');
+
+    expect(owner).to.exist;
+    expect(owner).to.be.an.instanceof(Schema.Types.ObjectId);
+    expect(owner.options).to.exist;
+    expect(owner.options).to.be.an('object');
+    expect(owner.options.type).to.exist;
+    expect(owner.options.ref).to.exist;
+    expect(owner.options.ref).to.be.equal(Party.MODEL_NAME);
+    expect(owner.options.exists).to.be.true;
+    expect(owner.options.autopopulate).to.exist;
+    expect(owner.options.index).to.be.true;
   });
 
   it('should have description field', () => {

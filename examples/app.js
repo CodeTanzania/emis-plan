@@ -36,6 +36,10 @@ const {
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 
 
+/* refs */
+let parties;
+
+
 /* mount routers */
 app.mount(permissionRouter);
 app.mount(roleRouter);
@@ -64,7 +68,8 @@ function boot() {
     },
 
     function seedParties(next) {
-      Party.seed(function ( /*error, results*/ ) {
+      Party.seed(function (error, results) {
+        parties = results;
         next();
       });
     },
@@ -106,6 +111,7 @@ function boot() {
     function seedPlans(incidentTypes, next) {
       const plans = Plan.fake(incidentTypes.length);
       _.forEach(incidentTypes, function (incidentType, index) {
+        plans[index].owner = parties[index % parties.length];
         plans[index].incidentType = incidentType;
       });
       Plan.insertMany(plans, next);
