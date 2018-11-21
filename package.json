@@ -29,11 +29,13 @@
     "procedures",
     "sop"
   ],
-  "contributors": [{
-    "name": "lykmapipo",
-    "email": "lallyelias87@gmail.com",
-    "url": "https://github.com/lykmapipo"
-  }],
+  "contributors": [
+    {
+      "name": "lykmapipo",
+      "email": "lallyelias87@gmail.com",
+      "url": "https://github.com/lykmapipo"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CodeTanzania/emis-plan/issues",
@@ -45,7 +47,8 @@
     "apidoc": "https://lykmapipo.github.io/plan/",
     "client_id": "",
     "client_secret": "",
-    "urls": [{
+    "urls": [
+      {
         "resource": "permission",
         "schema": "https://emis-plan.herokuapp.com/v1/permissions/schema",
         "link": "https://emis-plan.herokuapp.com/v1/permissions",
@@ -155,12 +158,26 @@
           "put",
           "patch"
         ]
+      },
+      {
+        "resource": "Item",
+        "schema": "https://emis-plan.herokuapp.com/v1/items/schema",
+        "link": "https://emis-plan.herokuapp.com/v1/items",
+        "scopes": [
+          "item:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
       }
     ]
   },
   "devDependencies": {
     "@benmaruchu/faker": "^4.2.1",
-    "@lykmapipo/permission": "^0.4.0",
+    "@lykmapipo/permission": "^0.4.1",
     "chai": "^4.2.0",
     "grunt": "^1.0.3",
     "grunt-apidoc": "^0.11.0",
@@ -169,19 +186,20 @@
     "grunt-mocha-test": "^0.13.3",
     "jshint-stylish": "^2.2.1",
     "mocha": "^5.2.0",
-    "mongoose": "^5.3.11",
+    "mongoose": "^5.3.13",
     "mongoose-rest-actions": "^0.20.2",
     "sinon": "^7.1.1",
     "sinon-chai": "^3.2.0",
     "sinon-mongoose": "^2.2.1",
-    "superagent": "^4.0.0-beta.5",
+    "superagent": "^4.0.0",
     "supertest": "^3.3.0"
   },
   "dependencies": {
     "@codetanzania/emis-alert": "^1.1.0",
     "@codetanzania/emis-incident-type": "^1.2.0",
-    "@codetanzania/emis-role": "^1.0.3",
-    "@codetanzania/emis-stakeholder": "^1.1.0",
+    "@codetanzania/emis-role": "^1.0.4",
+    "@codetanzania/emis-stakeholder": "^1.1.1",
+    "@codetanzania/emis-resource": "^1.0.0",
     "@codetanzania/majifix-common": "^0.11.1",
     "@lykmapipo/env": "^0.3.2",
     "@lykmapipo/express-common": "^0.9.3",

@@ -64,4 +64,48 @@
   "locale": "en",
   "email": "charsbeaty@gmail.com",
   "mobile": "255687902733"
+},
+{
+  "type": "Other",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Nyambiri Kimacha",
+  "nickname": "nyambiri",
+  "abbreviation": "NK",
+  "title": "ICT Officer",
+  "locale": "en",
+  "email": "nyambirik@gmail.com",
+  "mobile": "255621008922"
+},
+{
+  "type": "Other",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Msilikale Msilanga",
+  "nickname": "msilikale",
+  "abbreviation": "MM",
+  "title": "ICT Officer",
+  "locale": "en",
+  "email": "msilikalemsilanga@gmail.com",
+  "mobile": "255765952971"
+},
+{
+  "type": "Other",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Edward Charles Anderson",
+  "nickname": "edward",
+  "abbreviation": "ECA",
+  "title": "DRM Specialist",
+  "locale": "en",
+  "email": "eanderson1@worldbank.org",
+  "mobile": "255765952771"
+},
+{
+  "type": "Committee",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Ilala Disaster Committee",
+  "nickname": "Ilala",
+  "abbreviation": "ILDC",
+  "title": "Disaster Committee",
+  "locale": "en",
+  "email": "ilala@darmaert.org",
+  "mobile": "255775952671"
 }]
