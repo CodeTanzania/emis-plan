@@ -38,6 +38,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 
 /* refs */
 let parties;
+let roles;
 
 
 /* mount routers */
@@ -62,7 +63,8 @@ function boot() {
     },
 
     function seedRoles(next) {
-      Role.seed(function ( /*error, results*/ ) {
+      Role.seed(function (error, results) {
+        roles = results;
         next();
       });
     },
@@ -121,6 +123,8 @@ function boot() {
       const activities = Activity.fake(plans.length);
       _.forEach(plans, function (plan, index) {
         activities[index].plan = plan;
+        activities[index].primary = _.sampleSize(roles, 1);
+        activities[index].supportive = _.sampleSize(roles, 2);
       });
       Activity.insertMany(activities, next);
     },
@@ -130,6 +134,8 @@ function boot() {
       _.forEach(activities, function (activity, index) {
         procedures[index].activity = activity;
         procedures[index].number = (index % 2) + 1;
+        procedures[index].primary = _.sampleSize(roles, 1);
+        procedures[index].supportive = _.sampleSize(roles, 2);
       });
       Procedure.insertMany(procedures, next);
     }
