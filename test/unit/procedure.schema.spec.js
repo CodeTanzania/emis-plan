@@ -7,8 +7,7 @@ const { expect } = require('chai');
 const { Schema } = require('mongoose');
 const { IncidentType } = require('@codetanzania/emis-incident-type');
 const { Item } = require('@codetanzania/emis-resource');
-const Plan = require(path.join(__dirname, '..', '..', 'lib', 'plan.model'));
-const { Procedure, Activity } = require(path.join(__dirname, '..', '..'));
+const { Procedure, Activity, Plan } = require(path.join(__dirname, '..', '..'));
 
 
 describe('Procedure Schema', () => {
