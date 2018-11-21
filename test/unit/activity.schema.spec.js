@@ -6,9 +6,8 @@ const path = require('path');
 const { expect } = require('chai');
 const { Schema } = require('mongoose');
 const { IncidentType } = require('@codetanzania/emis-incident-type');
-const Plan = require(path.join(__dirname, '..', '..', 'lib', 'plan.model'));
-const Activity =
-  require(path.join(__dirname, '..', '..', 'lib', 'activity.model'));
+const { Item } = require('@codetanzania/emis-resource');
+const { Activity, Plan } = require(path.join(__dirname, '..', '..'));
 
 
 describe('Activity Schema', () => {
@@ -86,6 +85,22 @@ describe('Activity Schema', () => {
     expect(description.options.index).to.be.true;
     expect(description.options.searchable).to.be.true;
     expect(description.options.fake).to.exist;
+  });
+
+  it('should have resources field', () => {
+
+    const resources = Activity.path('resources');
+
+    expect(resources).to.exist;
+    expect(resources).to.be.instanceof(Schema.Types.Array);
+    expect(resources.options).to.exist;
+    expect(resources.options).to.be.an('object');
+    expect(resources.options.type).to.exist;
+    expect(resources.options.ref).to.exist;
+    expect(resources.options.ref).to.be.equal(Item.MODEL_NAME);
+    expect(resources.options.default).to.be.undefined;
+    expect(resources.options.index).to.be.true;
+    expect(resources.options.autopopulate).to.be.exist;
   });
 
 });

@@ -4,8 +4,7 @@
 /* dependencies */
 const path = require('path');
 const { expect } = require('chai');
-const Activity =
-  require(path.join(__dirname, '..', '..', 'lib', 'activity.model'));
+const { Activity } = require(path.join(__dirname, '..', '..'));
 
 describe('Activity Statics', () => {
 

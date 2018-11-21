@@ -6,7 +6,7 @@ const path = require('path');
 const { expect } = require('chai');
 const { Schema } = require('mongoose');
 const { IncidentType } = require('@codetanzania/emis-incident-type');
-const Plan = require(path.join(__dirname, '..', '..', 'lib', 'plan.model'));
+const { Plan } = require(path.join(__dirname, '..', '..'));
 
 
 describe('Plan Schema', () => {

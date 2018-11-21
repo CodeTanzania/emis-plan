@@ -4,7 +4,7 @@
 /* dependencies */
 const path = require('path');
 const { expect } = require('chai');
-const Plan = require(path.join(__dirname, '..', '..', 'lib', 'plan.model'));
+const { Plan } = require(path.join(__dirname, '..', '..'));
 
 describe('Plan Statics', () => {
 

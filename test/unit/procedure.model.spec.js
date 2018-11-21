@@ -4,8 +4,7 @@
 /* dependencies */
 const path = require('path');
 const { expect } = require('chai');
-const Procedure =
-  require(path.join(__dirname, '..', '..', 'lib', 'procedure.model'));
+const { Procedure } = require(path.join(__dirname, '..', '..'));
 
 describe('Procedure Statics', () => {
 
