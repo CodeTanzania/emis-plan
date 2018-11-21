@@ -6,6 +6,7 @@ const path = require('path');
 const { expect } = require('chai');
 const { Schema } = require('mongoose');
 const { IncidentType } = require('@codetanzania/emis-incident-type');
+const { Role } = require('@codetanzania/emis-stakeholder');
 const { Item } = require('@codetanzania/emis-resource');
 const { Procedure, Activity, Plan } = require(path.join(__dirname, '..', '..'));
 
@@ -112,6 +113,38 @@ describe('Procedure Schema', () => {
     expect(number.options.max).to.be.exist;
     expect(number.options.index).to.be.true;
     expect(number.options.fake).to.exist;
+  });
+
+  it('should have primary roles field', () => {
+
+    const primary = Procedure.path('primary');
+
+    expect(primary).to.exist;
+    expect(primary).to.be.instanceof(Schema.Types.Array);
+    expect(primary.options).to.exist;
+    expect(primary.options).to.be.an('object');
+    expect(primary.options.type).to.exist;
+    expect(primary.options.ref).to.exist;
+    expect(primary.options.ref).to.be.equal(Role.MODEL_NAME);
+    expect(primary.options.default).to.be.undefined;
+    expect(primary.options.index).to.be.true;
+    expect(primary.options.autopopulate).to.be.exist;
+  });
+
+  it('should have supportive roles field', () => {
+
+    const supportive = Procedure.path('supportive');
+
+    expect(supportive).to.exist;
+    expect(supportive).to.be.instanceof(Schema.Types.Array);
+    expect(supportive.options).to.exist;
+    expect(supportive.options).to.be.an('object');
+    expect(supportive.options.type).to.exist;
+    expect(supportive.options.ref).to.exist;
+    expect(supportive.options.ref).to.be.equal(Role.MODEL_NAME);
+    expect(supportive.options.default).to.be.undefined;
+    expect(supportive.options.index).to.be.true;
+    expect(supportive.options.autopopulate).to.be.exist;
   });
 
   it('should have resources field', () => {
