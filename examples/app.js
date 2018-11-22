@@ -16,7 +16,14 @@ const { Permission, permissionRouter } = require('@lykmapipo/permission');
 const { Role, roleRouter } = require('@codetanzania/emis-role');
 const { Party, partyRouter } = require('@codetanzania/emis-stakeholder');
 const { Alert, alertRouter } = require('@codetanzania/emis-alert');
-const { Item, itemRouter } = require('@codetanzania/emis-resource');
+const {
+  Item,
+  Stock,
+  Adjustment,
+  itemRouter,
+  stockRouter,
+  adjustmentRouter
+} = require('@codetanzania/emis-resource');
 const {
   IncidentType,
   incidentTypeRouter
@@ -39,6 +46,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 /* refs */
 let parties;
 let roles;
+let items;
 
 
 /* mount routers */
@@ -47,6 +55,8 @@ app.mount(roleRouter);
 app.mount(partyRouter);
 app.mount(alertRouter);
 app.mount(itemRouter);
+app.mount(stockRouter);
+app.mount(adjustmentRouter);
 app.mount(planRouter);
 app.mount(activityRouter);
 app.mount(procedureRouter);
@@ -83,9 +93,34 @@ function boot() {
     },
 
     function seedItems(next) {
-      Item.seed(function ( /*error, results*/ ) {
+      Item.seed(function (error, results) {
+        items = results;
         next();
       });
+    },
+
+    function seedStocks(next) {
+      const stocks = _.map(items, (item, index) => {
+        return {
+          owner: parties[index % parties.length],
+          item: item,
+          quantity: Math.ceil(Math.random() * 1000),
+          minAllowed: Math.ceil(Math.random() * 10),
+          maxAllowed: Math.ceil(Math.random() * 10000),
+        };
+      });
+      Stock.seed(stocks, ( /*error , stocks*/ ) => next());
+    },
+
+    function seedAdjustment(next) {
+      const adjustments = _.map(items, (item) => {
+        const adjustment = Adjustment.fake();
+        adjustment.item = item;
+        adjustment.quantity = Math.ceil(Math.random() * 100);
+        adjustment.cost = Math.ceil(Math.random() * 10000);
+        return adjustment;
+      });
+      Adjustment.insertMany(adjustments, ( /*error , stocks*/ ) => next());
     },
 
     function clearProcedures(next) {

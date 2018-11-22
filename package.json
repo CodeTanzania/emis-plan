@@ -172,6 +172,34 @@
           "put",
           "patch"
         ]
+      },
+      {
+        "resource": "Stock",
+        "schema": "https://emis-plan.herokuapp.com/v1/stocks/schema",
+        "link": "https://emis-plan.herokuapp.com/v1/stocks",
+        "scopes": [
+          "stock:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
+      },
+      {
+        "resource": "Adjustment",
+        "schema": "https://emis-plan.herokuapp.com/v1/adjustments/schema",
+        "link": "https://emis-plan.herokuapp.com/v1/adjustments",
+        "scopes": [
+          "adjustment:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
       }
     ]
   },
