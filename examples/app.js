@@ -13,6 +13,7 @@ const async = require('async');
 const mongoose = require('mongoose');
 const app = require('@lykmapipo/express-common');
 const { Permission, permissionRouter } = require('@lykmapipo/permission');
+const { Feature, featureRouter } = require('@codetanzania/emis-feature');
 const { Role, roleRouter } = require('@codetanzania/emis-role');
 const { Party, partyRouter } = require('@codetanzania/emis-stakeholder');
 const { Alert, alertRouter } = require('@codetanzania/emis-alert');
@@ -51,6 +52,7 @@ let items;
 
 /* mount routers */
 app.mount(permissionRouter);
+app.mount(featureRouter);
 app.mount(roleRouter);
 app.mount(partyRouter);
 app.mount(alertRouter);
@@ -68,6 +70,12 @@ function boot() {
 
     function seedPermissions(next) {
       Permission.seed(function ( /*error, results*/ ) {
+        next();
+      });
+    },
+
+    function seedFeatures(next) {
+      Feature.seed(function ( /*error, results*/ ) {
         next();
       });
     },

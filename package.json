@@ -29,13 +29,11 @@
     "procedures",
     "sop"
   ],
-  "contributors": [
-    {
-      "name": "lykmapipo",
-      "email": "lallyelias87@gmail.com",
-      "url": "https://github.com/lykmapipo"
-    }
-  ],
+  "contributors": [{
+    "name": "lykmapipo",
+    "email": "lallyelias87@gmail.com",
+    "url": "https://github.com/lykmapipo"
+  }],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CodeTanzania/emis-plan/issues",
@@ -47,8 +45,7 @@
     "apidoc": "https://lykmapipo.github.io/plan/",
     "client_id": "",
     "client_secret": "",
-    "urls": [
-      {
+    "urls": [{
         "resource": "permission",
         "schema": "https://emis-plan.herokuapp.com/v1/permissions/schema",
         "link": "https://emis-plan.herokuapp.com/v1/permissions",
@@ -200,6 +197,20 @@
           "put",
           "patch"
         ]
+      },
+      {
+        "resource": "Feature",
+        "schema": "https://emis-plan.herokuapp.com/v1/features/schema",
+        "link": "https://emis-plan.herokuapp.com/v1/features",
+        "scopes": [
+          "feature:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
       }
     ]
   },
@@ -224,10 +235,11 @@
   },
   "dependencies": {
     "@codetanzania/emis-alert": "^1.2.0",
+    "@codetanzania/emis-feature": "^1.0.1",
     "@codetanzania/emis-incident-type": "^1.2.0",
+    "@codetanzania/emis-resource": "^1.0.0",
     "@codetanzania/emis-role": "^1.0.4",
     "@codetanzania/emis-stakeholder": "^1.1.1",
-    "@codetanzania/emis-resource": "^1.0.0",
     "@codetanzania/majifix-common": "^0.11.1",
     "@lykmapipo/env": "^0.3.2",
     "@lykmapipo/express-common": "^0.9.3",
