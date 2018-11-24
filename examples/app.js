@@ -45,6 +45,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 
 
 /* refs */
+let features;
 let parties;
 let roles;
 let items;
@@ -75,7 +76,8 @@ function boot() {
     },
 
     function seedFeatures(next) {
-      Feature.seed(function ( /*error, results*/ ) {
+      Feature.seed(function (error, results) {
+        features = results;
         next();
       });
     },
@@ -158,6 +160,7 @@ function boot() {
       _.forEach(incidentTypes, function (incidentType, index) {
         plans[index].owner = parties[index % parties.length];
         plans[index].incidentType = incidentType;
+        plans[index].boundary = _.sample(features);
       });
       Plan.insertMany(plans, next);
     },

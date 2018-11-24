@@ -5,6 +5,7 @@
 const path = require('path');
 const { expect } = require('chai');
 const { Schema } = require('mongoose');
+const { Feature } = require('@codetanzania/emis-feature');
 const { IncidentType } = require('@codetanzania/emis-incident-type');
 const { Party } = require('@codetanzania/emis-stakeholder');
 const { Plan } = require(path.join(__dirname, '..', '..'));
@@ -24,6 +25,20 @@ describe('Plan Schema', () => {
     expect(incidentType.options.ref).to.be.equal(IncidentType.MODEL_NAME);
     expect(incidentType.options.index).to.be.true;
     expect(incidentType.options.autopopulate).to.exist;
+  });
+
+  it('should have boundary field', () => {
+    const boundary = Plan.path('boundary');
+
+    expect(boundary).to.exist;
+    expect(boundary).to.be.instanceof(Schema.Types.ObjectId);
+    expect(boundary.options).to.exist;
+    expect(boundary.options).to.be.an('object');
+    expect(boundary.options.type).to.exist;
+    expect(boundary.options.ref).to.exist;
+    expect(boundary.options.ref).to.be.equal(Feature.MODEL_NAME);
+    expect(boundary.options.index).to.be.true;
+    expect(boundary.options.autopopulate).to.exist;
   });
 
   it('should have owner field', () => {
