@@ -29,13 +29,11 @@
     "procedures",
     "sop"
   ],
-  "contributors": [
-    {
-      "name": "lykmapipo",
-      "email": "lallyelias87@gmail.com",
-      "url": "https://github.com/lykmapipo"
-    }
-  ],
+  "contributors": [{
+    "name": "lykmapipo",
+    "email": "lallyelias87@gmail.com",
+    "url": "https://github.com/lykmapipo"
+  }],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CodeTanzania/emis-plan/issues",
@@ -47,8 +45,7 @@
     "apidoc": "https://lykmapipo.github.io/plan/",
     "client_id": "",
     "client_secret": "",
-    "urls": [
-      {
+    "urls": [{
         "resource": "permission",
         "schema": "https://emis-plan.herokuapp.com/v1/permissions/schema",
         "link": "https://emis-plan.herokuapp.com/v1/permissions",
@@ -207,6 +204,48 @@
         "link": "https://emis-plan.herokuapp.com/v1/features",
         "scopes": [
           "feature:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
+      },
+      {
+        "resource": "Questionnaire",
+        "schema": "https://emis-plan.herokuapp.com/v1/questionnaires/schema",
+        "link": "https://emis-plan.herokuapp.com/v1/questionnaires",
+        "scopes": [
+          "questionnaire:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
+      },
+      {
+        "resource": "Question",
+        "schema": "https://emis-plan.herokuapp.com/v1/questions/schema",
+        "link": "https://emis-plan.herokuapp.com/v1/questions",
+        "scopes": [
+          "question:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
+      },
+      {
+        "resource": "Indicator",
+        "schema": "https://emis-plan.herokuapp.com/v1/indicators/schema",
+        "link": "https://emis-plan.herokuapp.com/v1/indicators",
+        "scopes": [
+          "indicators:*"
         ],
         "methods": [
           "get",

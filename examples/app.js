@@ -26,6 +26,14 @@ const {
   adjustmentRouter
 } = require('@codetanzania/emis-resource');
 const {
+  Indicator,
+  Question,
+  Questionnaire,
+  indicatorRouter,
+  questionRouter,
+  questionnaireRouter
+} = require('@codetanzania/emis-questionnaire');
+const {
   IncidentType,
   incidentTypeRouter
 } = require('@codetanzania/emis-incident-type');
@@ -52,8 +60,11 @@ let items;
 
 
 /* mount routers */
-app.mount(permissionRouter);
+app.mount(indicatorRouter);
+app.mount(questionRouter);
+app.mount(questionnaireRouter);
 app.mount(featureRouter);
+app.mount(permissionRouter);
 app.mount(roleRouter);
 app.mount(partyRouter);
 app.mount(alertRouter);
@@ -68,6 +79,45 @@ app.mount(procedureRouter);
 function boot() {
 
   async.waterfall([
+
+    function clearQuestionnaires(next) {
+      Questionnaire.deleteMany(function ( /*error, results*/ ) {
+        next();
+      });
+    },
+
+    function clearQuestions(next) {
+      Question.deleteMany(function ( /*error, results*/ ) {
+        next();
+      });
+    },
+
+    function clearIndicators(next) {
+      Indicator.deleteMany(function ( /*error, results*/ ) {
+        next();
+      });
+    },
+
+    function seedIndicators(next) {
+      const indicators = Indicator.fake(5);
+      Indicator.seed(indicators, next);
+    },
+
+    function seedQuestions(indicators, next) {
+      const questions = Question.fake(indicators.length);
+      _.map(questions, function (question, index) {
+        questions[index].indicator = indicators[index];
+      });
+      Question.seed(questions, next);
+    },
+
+    function seedQuestionnaires(questions, next) {
+      const questionnaire = Questionnaire.fake();
+      questionnaire.questions = [...questions];
+      Questionnaire.seed(questionnaire, function ( /*error, results*/ ) {
+        next();
+      });
+    },
 
     function seedPermissions(next) {
       Permission.seed(function ( /*error, results*/ ) {
