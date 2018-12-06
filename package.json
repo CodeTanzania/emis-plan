@@ -202,6 +202,20 @@
         ]
       },
       {
+        "resource": "Warehouse",
+        "schema": "https://emis-plan.herokuapp.com/v1/warehouses/schema",
+        "link": "https://emis-plan.herokuapp.com/v1/warehouses",
+        "scopes": [
+          "warehouse:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
+      },
+      {
         "resource": "Feature",
         "schema": "https://emis-plan.herokuapp.com/v1/features/schema",
         "link": "https://emis-plan.herokuapp.com/v1/features",
