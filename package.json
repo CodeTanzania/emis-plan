@@ -29,11 +29,13 @@
     "procedures",
     "sop"
   ],
-  "contributors": [{
-    "name": "lykmapipo",
-    "email": "lallyelias87@gmail.com",
-    "url": "https://github.com/lykmapipo"
-  }],
+  "contributors": [
+    {
+      "name": "lykmapipo",
+      "email": "lallyelias87@gmail.com",
+      "url": "https://github.com/lykmapipo"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CodeTanzania/emis-plan/issues",
@@ -45,7 +47,8 @@
     "apidoc": "https://lykmapipo.github.io/plan/",
     "client_id": "",
     "client_secret": "",
-    "urls": [{
+    "urls": [
+      {
         "resource": "permission",
         "schema": "https://emis-plan.herokuapp.com/v1/permissions/schema",
         "link": "https://emis-plan.herokuapp.com/v1/permissions",
@@ -225,10 +228,10 @@
     "grunt-mocha-test": "^0.13.3",
     "jshint-stylish": "^2.2.1",
     "mocha": "^5.2.0",
-    "mongoose": "^5.3.13",
-    "mongoose-rest-actions": "^0.20.2",
+    "mongoose": "^5.3.15",
+    "mongoose-rest-actions": "^0.21.0",
     "sinon": "^7.1.1",
-    "sinon-chai": "^3.2.0",
+    "sinon-chai": "^3.3.0",
     "sinon-mongoose": "^2.2.1",
     "superagent": "^4.0.0",
     "supertest": "^3.3.0"
@@ -253,7 +256,7 @@
     "mongoose-geojson-schemas": "^0.8.2",
     "mongoose-kue": "^0.7.1",
     "mongoose-locale-schema": "^0.2.1",
-    "mongoose-schema-jsonschema": "^1.1.15",
+    "mongoose-schema-jsonschema": "^1.2.1",
     "randomcolor": "^0.5.3",
     "redis": "^2.8.0"
   },
