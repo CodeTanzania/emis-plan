@@ -229,7 +229,6 @@
     "jshint-stylish": "^2.2.1",
     "mocha": "^5.2.0",
     "mongoose": "^5.3.15",
-    "mongoose-rest-actions": "^0.21.0",
     "sinon": "^7.1.1",
     "sinon-chai": "^3.3.0",
     "sinon-mongoose": "^2.2.1",
@@ -240,6 +239,7 @@
     "@codetanzania/emis-alert": "^1.2.0",
     "@codetanzania/emis-feature": "^1.0.1",
     "@codetanzania/emis-incident-type": "^1.2.0",
+    "@codetanzania/emis-questionnaire": "^1.0.1",
     "@codetanzania/emis-resource": "^1.0.0",
     "@codetanzania/emis-role": "^1.0.4",
     "@codetanzania/emis-stakeholder": "^1.1.1",
@@ -256,6 +256,7 @@
     "mongoose-geojson-schemas": "^0.8.2",
     "mongoose-kue": "^0.7.1",
     "mongoose-locale-schema": "^0.2.1",
+    "mongoose-rest-actions": "^0.21.0",
     "mongoose-schema-jsonschema": "^1.2.1",
     "randomcolor": "^0.5.3",
     "redis": "^2.8.0"

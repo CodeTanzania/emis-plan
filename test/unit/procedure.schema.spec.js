@@ -8,6 +8,7 @@ const { Schema } = require('mongoose');
 const { IncidentType } = require('@codetanzania/emis-incident-type');
 const { Role } = require('@codetanzania/emis-stakeholder');
 const { Item } = require('@codetanzania/emis-resource');
+const { Questionnaire } = require('@codetanzania/emis-questionnaire');
 const { Procedure, Activity, Plan } = require(path.join(__dirname, '..', '..'));
 
 
@@ -161,6 +162,22 @@ describe('Procedure Schema', () => {
     expect(resources.options.default).to.be.undefined;
     expect(resources.options.index).to.be.true;
     expect(resources.options.autopopulate).to.be.exist;
+  });
+
+  it('should have assessments field', () => {
+
+    const assessments = Procedure.path('assessments');
+
+    expect(assessments).to.exist;
+    expect(assessments).to.be.instanceof(Schema.Types.Array);
+    expect(assessments.options).to.exist;
+    expect(assessments.options).to.be.an('object');
+    expect(assessments.options.type).to.exist;
+    expect(assessments.options.ref).to.exist;
+    expect(assessments.options.ref).to.be.equal(Questionnaire.MODEL_NAME);
+    expect(assessments.options.default).to.be.undefined;
+    expect(assessments.options.index).to.be.true;
+    expect(assessments.options.autopopulate).to.be.exist;
   });
 
 });
