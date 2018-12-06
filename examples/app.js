@@ -18,9 +18,11 @@ const { Role, roleRouter } = require('@codetanzania/emis-role');
 const { Party, partyRouter } = require('@codetanzania/emis-stakeholder');
 const { Alert, alertRouter } = require('@codetanzania/emis-alert');
 const {
+  Warehouse,
   Item,
   Stock,
   Adjustment,
+  warehouseRouter,
   itemRouter,
   stockRouter,
   adjustmentRouter
@@ -54,6 +56,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 
 /* refs */
 let features;
+let warehouses;
 let parties;
 let roles;
 let items;
@@ -68,6 +71,7 @@ app.mount(permissionRouter);
 app.mount(roleRouter);
 app.mount(partyRouter);
 app.mount(alertRouter);
+app.mount(warehouseRouter);
 app.mount(itemRouter);
 app.mount(stockRouter);
 app.mount(adjustmentRouter);
@@ -128,6 +132,8 @@ function boot() {
     function seedFeatures(next) {
       Feature.seed(function (error, results) {
         features = results;
+        warehouses =
+          _.filter(features, feature => feature.type === 'Warehouse');
         next();
       });
     },
@@ -162,6 +168,7 @@ function boot() {
     function seedStocks(next) {
       const stocks = _.map(items, (item, index) => {
         return {
+          store: warehouses[index % warehouses.length],
           owner: parties[index % parties.length],
           item: item,
           quantity: Math.ceil(Math.random() * 1000),
@@ -169,13 +176,16 @@ function boot() {
           maxAllowed: Math.ceil(Math.random() * 10000),
         };
       });
-      Stock.seed(stocks, ( /*error , stocks*/ ) => next());
+      Stock.seed(stocks, next);
     },
 
-    function seedAdjustment(next) {
-      const adjustments = _.map(items, (item) => {
+    function seedAdjustment(stocks, next) {
+      const adjustments = _.map(stocks, (stock) => {
         const adjustment = Adjustment.fake();
-        adjustment.item = item;
+        adjustment.item = stock.item;
+        adjustment.stock = stock;
+        adjustment.store = stock.store;
+        adjustment.party = stock.owner;
         adjustment.quantity = Math.ceil(Math.random() * 100);
         adjustment.cost = Math.ceil(Math.random() * 10000);
         return adjustment;
