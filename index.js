@@ -21,61 +21,115 @@
 
 
 /* dependencies */
-const path = require('path');
 const _ = require('lodash');
+const { include } = require('@lykmapipo/include');
 const app = require('@lykmapipo/express-common');
-const mongoose = require('mongoose');
-require('mongoose-schema-jsonschema')(mongoose);
+const pkg = include(__dirname, 'package.json');
+const Plan = include(__dirname, 'lib', 'plan.model');
+const Activity = include(__dirname, 'lib', 'activity.model');
+const Procedure = include(__dirname, 'lib', 'procedure.model');
+const planRouter = include(__dirname, 'lib', 'plan.http.router');
+const activityRouter = include(__dirname, 'lib', 'activity.http.router');
+const procedureRouter = include(__dirname, 'lib', 'procedure.http.router');
 
 
-/* declarations */
-const pkg = require(path.join(__dirname, 'package.json'));
-const fields = [
-  'name',
-  'description',
-  'version',
-  'license',
-  'homepage',
-  'repository',
-  'bugs',
-  'sandbox',
-  'contributors'
-];
+/**
+ * @name info
+ * @description package information
+ * @type {Object}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 1.0.0
+ * @version 0.1.0
+ */
+exports.info = _.merge({}, _.pick(pkg, [
+  'name', 'description', 'version', 'license',
+  'homepage', 'repository', 'bugs', 'sandbox', 'contributors'
+]));
 
 
-/* extract information from package.json */
-const info = _.merge({}, _.pick(pkg, fields));
-
-
-/* export package(module) info */
-exports.info = info;
-
-
-/* import models */
-const Plan = require(path.join(__dirname, 'lib', 'plan.model'));
-const Activity = require(path.join(__dirname, 'lib', 'activity.model'));
-const Procedure = require(path.join(__dirname, 'lib', 'procedure.model'));
-
-
-/* export models */
+/**
+ * @name Plan
+ * @description Plan model
+ * @type {mongoose.Model}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 1.0.0
+ * @version 0.1.0
+ */
 exports.Plan = Plan;
+
+
+/**
+ * @name Activity
+ * @description Activity model
+ * @type {mongoose.Model}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 1.0.0
+ * @version 0.1.0
+ */
 exports.Activity = Activity;
+
+
+/**
+ * @name Procedure
+ * @description Procedure model
+ * @type {mongoose.Model}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 1.0.0
+ * @version 0.1.0
+ */
 exports.Procedure = Procedure;
 
 
-/* import routers */
-const planRouter =
-  require(path.join(__dirname, 'lib', 'plan.http.router'));
-const activityRouter =
-  require(path.join(__dirname, 'lib', 'activity.http.router'));
-const procedureRouter =
-  require(path.join(__dirname, 'lib', 'procedure.http.router'));
-
-
-/* export plan router */
+/**
+ * @name planRouter
+ * @description plan http router
+ * @type {express.Router}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 1.0.0
+ * @version 0.1.0
+ */
 exports.planRouter = planRouter;
+
+
+/**
+ * @name activityRouter
+ * @description activity http router
+ * @type {express.Router}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 1.0.0
+ * @version 0.1.0
+ */
 exports.activityRouter = activityRouter;
+
+
+/**
+ * @name procedureRouter
+ * @description procedure http router
+ * @type {express.Router}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 1.0.0
+ * @version 0.1.0
+ */
 exports.procedureRouter = procedureRouter;
+
+
+/**
+ * @name apiVersion
+ * @description http router api version
+ * @type {String}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 1.0.0
+ * @version 0.1.0
+ */
+exports.apiVersion = planRouter.apiVersion;
 
 
 /* export app */
