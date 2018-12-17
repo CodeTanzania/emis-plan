@@ -1,0 +1,57 @@
+[
+{
+  "continent": "Africa",
+  "country": "Tanzania",
+  "name": "DSM",
+  "category": "Building",
+  "type": "Warehouse",
+  "level": "region"
+},
+{
+  "continent": "Africa",
+  "country": "Tanzania",
+  "name": "DSM TAMISEMI",
+  "category": "Building",
+  "type": "Warehouse",
+  "level": "region"
+},
+{
+  "continent": "Africa",
+  "country": "Tanzania",
+  "name": "Shinyanga",
+  "category": "Building",
+  "type": "Warehouse",
+  "level": "region"
+},
+{
+  "continent": "Africa",
+  "country": "Tanzania",
+  "name": "Lindi",
+  "category": "Building",
+  "type": "Warehouse",
+  "level": "region"
+},
+{
+  "continent": "Africa",
+  "country": "Tanzania",
+  "name": "Dodoma",
+  "category": "Building",
+  "type": "Warehouse",
+  "level": "region"
+},
+{
+  "continent": "Africa",
+  "country": "Tanzania",
+  "name": "Kilimanjaro",
+  "category": "Building",
+  "type": "Warehouse",
+  "level": "region"
+},
+{
+  "continent": "Africa",
+  "country": "Tanzania",
+  "name": "Mbeya",
+  "category": "Building",
+  "type": "Warehouse",
+  "level": "region"
+}]

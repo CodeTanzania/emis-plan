@@ -18,13 +18,23 @@ const { Role, roleRouter } = require('@codetanzania/emis-role');
 const { Party, partyRouter } = require('@codetanzania/emis-stakeholder');
 const { Alert, alertRouter } = require('@codetanzania/emis-alert');
 const {
+  Warehouse,
   Item,
   Stock,
   Adjustment,
+  warehouseRouter,
   itemRouter,
   stockRouter,
   adjustmentRouter
 } = require('@codetanzania/emis-resource');
+const {
+  Indicator,
+  Question,
+  Questionnaire,
+  indicatorRouter,
+  questionRouter,
+  questionnaireRouter
+} = require('@codetanzania/emis-questionnaire');
 const {
   IncidentType,
   incidentTypeRouter
@@ -46,17 +56,22 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 
 /* refs */
 let features;
+let warehouses;
 let parties;
 let roles;
 let items;
 
 
 /* mount routers */
-app.mount(permissionRouter);
+app.mount(indicatorRouter);
+app.mount(questionRouter);
+app.mount(questionnaireRouter);
 app.mount(featureRouter);
+app.mount(permissionRouter);
 app.mount(roleRouter);
 app.mount(partyRouter);
 app.mount(alertRouter);
+app.mount(warehouseRouter);
 app.mount(itemRouter);
 app.mount(stockRouter);
 app.mount(adjustmentRouter);
@@ -69,6 +84,45 @@ function boot() {
 
   async.waterfall([
 
+    function clearQuestionnaires(next) {
+      Questionnaire.deleteMany(function ( /*error, results*/ ) {
+        next();
+      });
+    },
+
+    function clearQuestions(next) {
+      Question.deleteMany(function ( /*error, results*/ ) {
+        next();
+      });
+    },
+
+    function clearIndicators(next) {
+      Indicator.deleteMany(function ( /*error, results*/ ) {
+        next();
+      });
+    },
+
+    function seedIndicators(next) {
+      const indicators = Indicator.fake(5);
+      Indicator.seed(indicators, next);
+    },
+
+    function seedQuestions(indicators, next) {
+      const questions = Question.fake(indicators.length);
+      _.map(questions, function (question, index) {
+        questions[index].indicator = indicators[index];
+      });
+      Question.seed(questions, next);
+    },
+
+    function seedQuestionnaires(questions, next) {
+      const questionnaire = Questionnaire.fake();
+      questionnaire.questions = [...questions];
+      Questionnaire.seed(questionnaire, function ( /*error, results*/ ) {
+        next();
+      });
+    },
+
     function seedPermissions(next) {
       Permission.seed(function ( /*error, results*/ ) {
         next();
@@ -78,6 +132,8 @@ function boot() {
     function seedFeatures(next) {
       Feature.seed(function (error, results) {
         features = results;
+        warehouses =
+          _.filter(features, feature => feature.type === 'Warehouse');
         next();
       });
     },
@@ -112,6 +168,7 @@ function boot() {
     function seedStocks(next) {
       const stocks = _.map(items, (item, index) => {
         return {
+          store: warehouses[index % warehouses.length],
           owner: parties[index % parties.length],
           item: item,
           quantity: Math.ceil(Math.random() * 1000),
@@ -119,13 +176,16 @@ function boot() {
           maxAllowed: Math.ceil(Math.random() * 10000),
         };
       });
-      Stock.seed(stocks, ( /*error , stocks*/ ) => next());
+      Stock.seed(stocks, next);
     },
 
-    function seedAdjustment(next) {
-      const adjustments = _.map(items, (item) => {
+    function seedAdjustment(stocks, next) {
+      const adjustments = _.map(stocks, (stock) => {
         const adjustment = Adjustment.fake();
-        adjustment.item = item;
+        adjustment.item = stock.item;
+        adjustment.stock = stock;
+        adjustment.store = stock.store;
+        adjustment.party = stock.owner;
         adjustment.quantity = Math.ceil(Math.random() * 100);
         adjustment.cost = Math.ceil(Math.random() * 10000);
         return adjustment;
