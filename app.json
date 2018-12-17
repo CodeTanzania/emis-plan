@@ -1,0 +1,40 @@
+{
+  "name": "emis-plan",
+  "description": "A representation of written set of activities and procedures that guides what stakeholders what to do in emergency event.",
+  "repository": "https://github.com/CodeTanzania/emis-plan.git",
+  "keywords": [
+    "codetanzania",
+    "emis",
+    "emis-module",
+    "incident",
+    "hazard",
+    "emergency",
+    "risk",
+    "plan",
+    "contingency",
+    "activity",
+    "action",
+    "task",
+    "procedures",
+    "sop"
+  ],
+  "addons": [
+    "mongolab",
+    "heroku-redis"
+  ],
+  "env":
+  {
+    "NPM_CONFIG_PRODUCTION":
+    {
+      "value": "false"
+    },
+    "YARN_PRODUCTION":
+    {
+      "value": "false"
+    },
+    "HEROKU":
+    {
+      "value": "true"
+    }
+  }
+}

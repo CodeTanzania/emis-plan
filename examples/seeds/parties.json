@@ -1,0 +1,122 @@
+[
+{
+  "type": "Other",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Lally Elias",
+  "nickname": "lykmapipo",
+  "abbreviation": "LE",
+  "title": "ICT Officer",
+  "locale": "en",
+  "email": "lallyelias87@gmail.com",
+  "mobile": "255714095061"
+},
+{
+  "type": "Other",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Benson Maruchu",
+  "nickname": "benmaruchu",
+  "abbreviation": "BM",
+  "title": "ICT Officer",
+  "locale": "en",
+  "email": "benmaruchu@gmail.com",
+  "mobile": "255719818179"
+},
+{
+  "type": "Other",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Nancy Victor",
+  "nickname": "navish",
+  "abbreviation": "NV",
+  "title": "ICT Officer",
+  "locale": "en",
+  "email": "navish45@gmail.com",
+  "mobile": "255782120252"
+},
+{
+  "type": "Other",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Isaac Kasongoyo",
+  "nickname": "navish",
+  "abbreviation": "NV",
+  "title": "ICT Officer",
+  "locale": "en",
+  "email": "kasongoyo@gmail.com",
+  "mobile": "255713935778"
+},
+{
+  "type": "Other",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Edgar Vitus Mlowe",
+  "nickname": "edga",
+  "abbreviation": "EVM",
+  "title": "ICT Officer",
+  "locale": "en",
+  "email": "mloweedgarvitus@gmail.com",
+  "mobile": "255654988047"
+},
+{
+  "type": "Other",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Beatrice Charles",
+  "nickname": "beaty",
+  "abbreviation": "BC",
+  "title": "ICT Officer",
+  "locale": "en",
+  "email": "charsbeaty@gmail.com",
+  "mobile": "255687902733"
+},
+{
+  "type": "Other",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Nyambiri Kimacha",
+  "nickname": "nyambiri",
+  "abbreviation": "NK",
+  "title": "ICT Officer",
+  "locale": "en",
+  "email": "nyambirik@gmail.com",
+  "mobile": "255621008922"
+},
+{
+  "type": "Other",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Msilikale Msilanga",
+  "nickname": "msilikale",
+  "abbreviation": "MM",
+  "title": "ICT Officer",
+  "locale": "en",
+  "email": "msilikalemsilanga@gmail.com",
+  "mobile": "255765952971"
+},
+{
+  "type": "Other",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Edward Charles Anderson",
+  "nickname": "edward",
+  "abbreviation": "ECA",
+  "title": "DRM Specialist",
+  "locale": "en",
+  "email": "eanderson1@worldbank.org",
+  "mobile": "255765952771"
+},
+{
+  "type": "Other",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Richard Senkondo",
+  "nickname": "rich",
+  "abbreviation": "RS",
+  "title": "DRM Specialist",
+  "locale": "en",
+  "email": "richsenkondo@gmail.com",
+  "mobile": "255713507894"
+},
+{
+  "type": "Committee",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Ilala Disaster Committee",
+  "nickname": "Ilala",
+  "abbreviation": "ILDC",
+  "title": "Disaster Committee",
+  "locale": "en",
+  "email": "ilala@darmaert.org",
+  "mobile": "255775952671"
+}]

@@ -1,0 +1,111 @@
+[
+{
+  "nature": "Natural",
+  "family": "Geophysical",
+  "name": "Earthquake"
+},
+{
+  "nature": "Natural",
+  "family": "Geophysical",
+  "name": "Volcanic Activity"
+},
+{
+  "nature": "Natural",
+  "family": "Geophysical",
+  "name": "Dry Mass Movement"
+},
+{
+  "nature": "Natural",
+  "family": "Meteorological",
+  "name": "Storm"
+},
+{
+  "nature": "Natural",
+  "family": "Meteorological",
+  "name": "Extreme Temperature"
+},
+{
+  "nature": "Natural",
+  "family": "Meteorological",
+  "name": "Fog"
+},
+{
+  "nature": "Natural",
+  "family": "Hydrological",
+  "name": "Flood"
+},
+{
+  "nature": "Natural",
+  "family": "Hydrological",
+  "name": "Wet Mass Movement"
+},
+{
+  "nature": "Natural",
+  "family": "Hydrological",
+  "name": "Wave Action"
+},
+{
+  "nature": "Natural",
+  "family": "Climatological",
+  "name": "Drought"
+},
+{
+  "nature": "Natural",
+  "family": "Climatological",
+  "name": "Wildfire"
+},
+{
+  "nature": "Natural",
+  "family": "Climatological",
+  "name": "Glacial Lake Outburst"
+},
+{
+  "nature": "Natural",
+  "family": "Biological",
+  "name": "Epidemic"
+},
+{
+  "nature": "Natural",
+  "family": "Biological",
+  "name": "Insect Infestation"
+},
+{
+  "nature": "Natural",
+  "family": "Biological",
+  "name": "Animal Incident"
+},
+{
+  "nature": "Natural",
+  "family": "Biological",
+  "name": "Animal Stampede"
+},
+{
+  "nature": "Natural",
+  "family": "Biological",
+  "name": "Disease"
+},
+{
+  "nature": "Natural",
+  "family": "Extra-terrestrial",
+  "name": "Impact"
+},
+{
+  "nature": "Natural",
+  "family": "Extra-terrestrial",
+  "name": "Space Weather"
+},
+{
+  "nature": "Technological",
+  "family": "Technological",
+  "name": "Industrial Accident"
+},
+{
+  "nature": "Technological",
+  "family": "Technological",
+  "name": "Transport Accident"
+},
+{
+  "nature": "Technological",
+  "family": "Technological",
+  "name": "Miscellaneous Accident"
+}]
