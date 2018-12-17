@@ -82,6 +82,9 @@ app.mount(procedureRouter);
 /* seed and start */
 function boot() {
 
+  const startedAt = new Date();
+  console.log('Seed Start', startedAt);
+
   async.waterfall([
 
     function clearQuestionnaires(next) {
@@ -108,9 +111,10 @@ function boot() {
     },
 
     function seedQuestions(indicators, next) {
-      const questions = Question.fake(indicators.length);
-      _.map(questions, function (question, index) {
+      let questions = Question.fake(indicators.length);
+      questions = _.map(questions, function (question, index) {
         questions[index].indicator = indicators[index];
+        return question;
       });
       Question.seed(questions, next);
     },
@@ -247,6 +251,9 @@ function boot() {
     }
 
   ], function (error, results) {
+    const endedAt = new Date();
+    console.log('Seed End', endedAt);
+    console.log('Seed Time', endedAt.getTime() - startedAt.getTime());
 
     /* expose module info */
     app.get('/', function (request, response) {
