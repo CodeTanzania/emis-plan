@@ -99,6 +99,17 @@
   "mobile": "255765952771"
 },
 {
+  "type": "Other",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Richard Senkondo",
+  "nickname": "rich",
+  "abbreviation": "RS",
+  "title": "DRM Specialist",
+  "locale": "en",
+  "email": "richsenkondo@gmail.com",
+  "mobile": "255713507894"
+},
+{
   "type": "Committee",
   "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
   "name": "Ilala Disaster Committee",
