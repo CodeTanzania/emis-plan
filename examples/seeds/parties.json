@@ -118,5 +118,16 @@
   "title": "Disaster Committee",
   "locale": "en",
   "email": "ilala@darmaert.org",
-  "mobile": "255775952671"
+  "mobile": "255765952671"
+},
+{
+  "type": "Agency",
+  "phases": ["Mitigation", "Preparedness", "Response", "Recovery"],
+  "name": "Dar es Salaam Multi-Agency Emergency Response Team",
+  "nickname": "DarMAERT",
+  "abbreviation": "DarMAERT",
+  "title": "Dar es Salaam Multi-Agency Emergency Response Team",
+  "locale": "en",
+  "email": "darmaert@darmaert.org",
+  "mobile": "255765115115"
 }]

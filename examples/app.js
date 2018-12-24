@@ -12,6 +12,7 @@ const _ = require('lodash');
 const async = require('async');
 const mongoose = require('mongoose');
 const app = require('@lykmapipo/express-common');
+const { include } = require('@lykmapipo/include');
 const { Permission, permissionRouter } = require('@lykmapipo/permission');
 const { Feature, featureRouter } = require('@codetanzania/emis-feature');
 const { Role, roleRouter } = require('@codetanzania/emis-role');
@@ -63,6 +64,7 @@ let items;
 
 
 /* mount routers */
+app.mount(incidentTypeRouter);
 app.mount(indicatorRouter);
 app.mount(questionRouter);
 app.mount(questionnaireRouter);
@@ -86,7 +88,6 @@ function boot() {
   console.log('Seed Start', startedAt);
 
   async.waterfall([
-
     function clearQuestionnaires(next) {
       Questionnaire.deleteMany(function ( /*error, results*/ ) {
         next();
@@ -220,22 +221,27 @@ function boot() {
     },
 
     function seedPlans(incidentTypes, next) {
-      const plans = Plan.fake(incidentTypes.length);
-      _.forEach(incidentTypes, function (incidentType, index) {
-        plans[index].owner = parties[index % parties.length];
-        plans[index].incidentType = incidentType;
-        plans[index].boundary = _.sample(features);
+      const plans = _.map(incidentTypes, function (incidentType, index) {
+        return {
+          owner: _.find(parties, { abbreviation: 'DARMAERT' }),
+          incidentType: incidentType,
+          boundary: _.find(features, { name: 'Dar-es-salaam' })
+        };
       });
       Plan.insertMany(plans, next);
     },
 
     function seedActivities(plans, next) {
-      const activities = Activity.fake(plans.length);
-      _.forEach(plans, function (plan, index) {
-        activities[index].plan = plan;
-        activities[index].primary = _.sampleSize(roles, 1);
-        activities[index].supportive = _.sampleSize(roles, 2);
+      let activities = include(__dirname, 'seeds', 'activities');
+      activities = _.map(plans, function (plan, index) {
+        return _.map(activities, function (activity) {
+          activity.plan = plan;
+          activity.primary = _.sampleSize(roles, 1);
+          activity.supportive = _.sampleSize(roles, 2);
+          return activity;
+        });
       });
+      activities = _.flattenDeep(activities);
       Activity.insertMany(activities, next);
     },
 
@@ -251,6 +257,7 @@ function boot() {
     }
 
   ], function (error, results) {
+    console.log(error);
     const endedAt = new Date();
     console.log('Seed End', endedAt);
     console.log('Seed Time', endedAt.getTime() - startedAt.getTime());
@@ -260,8 +267,6 @@ function boot() {
       response.status(200);
       response.json(info);
     });
-
-    app.mount(incidentTypeRouter);
 
     /* fire the app */
     app.start(function (error, env) {

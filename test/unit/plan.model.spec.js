@@ -2,9 +2,9 @@
 
 
 /* dependencies */
-const path = require('path');
 const { expect } = require('chai');
-const { Plan } = require(path.join(__dirname, '..', '..'));
+const { include } = require('@lykmapipo/include');
+const { Plan } = include(__dirname, '..', '..');
 
 describe('Plan Statics', () => {
 
