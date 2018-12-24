@@ -2,14 +2,14 @@
 
 
 /* dependencies */
-const path = require('path');
 const { expect } = require('chai');
+const { include } = require('@lykmapipo/include');
 const { Schema } = require('mongoose');
 const { IncidentType } = require('@codetanzania/emis-incident-type');
 const { Role } = require('@codetanzania/emis-stakeholder');
 const { Item } = require('@codetanzania/emis-resource');
 const { Questionnaire } = require('@codetanzania/emis-questionnaire');
-const { Procedure, Activity, Plan } = require(path.join(__dirname, '..', '..'));
+const { Procedure, Activity, Plan } = include(__dirname, '..', '..');
 
 
 describe('Procedure Schema', () => {

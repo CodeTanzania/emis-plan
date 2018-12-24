@@ -1,6 +1,6 @@
 {
   "name": "@codetanzania/emis-plan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A representation of written set of activities and procedures that outlines(or guides) what stakeholders and others should do in emergency(or disaster) event.",
   "main": "index.js",
   "scripts": {
@@ -276,7 +276,7 @@
   "devDependencies": {
     "@benmaruchu/faker": "^4.2.1",
     "@codetanzania/majifix-common": ">=0.11.1",
-    "@lykmapipo/mongoose-test-helpers": "^0.2.3",
+    "@lykmapipo/mongoose-test-helpers": ">=0.2.4",
     "@lykmapipo/postman": ">=0.5.1",
     "chai": "^4.2.0",
     "grunt": "^1.0.3",
@@ -296,20 +296,20 @@
     "mongoose": ">=5.4.0"
   },
   "dependencies": {
-    "@codetanzania/emis-alert": ">=1.2.1",
-    "@codetanzania/emis-feature": ">=1.1.0",
-    "@codetanzania/emis-incident-type": ">=1.3.0",
-    "@codetanzania/emis-questionnaire": ">=1.1.0",
-    "@codetanzania/emis-resource": ">=1.2.1",
-    "@codetanzania/emis-role": ">=1.1.1",
-    "@codetanzania/emis-stakeholder": ">=1.2.1",
-    "@lykmapipo/env": ">=0.3.2",
-    "@lykmapipo/express-common": ">=0.9.4",
-    "@lykmapipo/permission": "^0.6.0",
+    "@codetanzania/emis-alert": ">=1.2.2",
+    "@codetanzania/emis-feature": ">=1.1.1",
+    "@codetanzania/emis-incident-type": ">=1.3.2",
+    "@codetanzania/emis-questionnaire": ">=1.1.1",
+    "@codetanzania/emis-resource": ">=1.2.2",
+    "@codetanzania/emis-role": ">=1.1.2",
+    "@codetanzania/emis-stakeholder": ">=1.2.2",
+    "@lykmapipo/env": ">=0.3.3",
+    "@lykmapipo/express-common": ">=0.10.0",
+    "@lykmapipo/permission": ">=0.6.0",
     "async": ">=2.6.1",
     "lodash": ">=4.17.11",
     "mongoose-geojson-schemas": ">=0.8.2",
-    "mongoose-rest-actions": ">=0.22.2",
+    "mongoose-rest-actions": ">=0.22.3",
     "randomcolor": ">=0.5.3"
   },
   "engines": {

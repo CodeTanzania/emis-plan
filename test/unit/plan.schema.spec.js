@@ -2,13 +2,13 @@
 
 
 /* dependencies */
-const path = require('path');
 const { expect } = require('chai');
+const { include } = require('@lykmapipo/include');
 const { Schema } = require('mongoose');
 const { Feature } = require('@codetanzania/emis-feature');
 const { IncidentType } = require('@codetanzania/emis-incident-type');
 const { Party } = require('@codetanzania/emis-stakeholder');
-const { Plan } = require(path.join(__dirname, '..', '..'));
+const { Plan } = include(__dirname, '..', '..');
 
 
 describe('Plan Schema', () => {
