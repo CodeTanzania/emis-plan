@@ -13,6 +13,7 @@ const async = require('async');
 const mongoose = require('mongoose');
 const app = require('@lykmapipo/express-common');
 const { include } = require('@lykmapipo/include');
+const { jsonSchema } = require('@lykmapipo/mongoose-common');
 const { Permission, permissionRouter } = require('@lykmapipo/permission');
 const { Feature, featureRouter } = require('@codetanzania/emis-feature');
 const { Role, roleRouter } = require('@codetanzania/emis-role');
@@ -47,9 +48,9 @@ const {
   activityRouter,
   Procedure,
   procedureRouter,
+  apiVersion,
   info
 } = require(path.join(__dirname, '..'));
-
 
 /* establish mongodb connection */
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
@@ -266,6 +267,13 @@ function boot() {
     app.get('/', function (request, response) {
       response.status(200);
       response.json(info);
+    });
+
+    /* expose api schemas */
+    app.get(`/v${apiVersion}/schemas`, function (request, response) {
+      const schema = jsonSchema();
+      response.status(200);
+      response.json(schema);
     });
 
     /* fire the app */
