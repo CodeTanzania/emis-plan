@@ -1,5 +1,6 @@
 'use strict';
 
+// TODO refactor and use real seeds
 
 /* ensure mongodb uri */
 process.env.MONGODB_URI =
@@ -47,6 +48,14 @@ const {
   incidentTypeRouter
 } = require('@codetanzania/emis-incident-type');
 const {
+  Incident,
+  Action,
+  Task,
+  incidentRouter,
+  actionRouter,
+  taskRouter
+} = require('@codetanzania/emis-incident');
+const {
   Plan,
   planRouter,
   Activity,
@@ -67,6 +76,7 @@ let warehouses;
 let parties;
 let roles;
 let items;
+let incidentTypes;
 
 
 /* mount routers */
@@ -87,6 +97,9 @@ app.mount(adjustmentRouter);
 app.mount(planRouter);
 app.mount(activityRouter);
 app.mount(procedureRouter);
+app.mount(incidentRouter);
+app.mount(actionRouter);
+app.mount(taskRouter);
 
 /* seed and start */
 function boot() {
@@ -230,7 +243,10 @@ function boot() {
     },
 
     function seedIncidentTypes(next) {
-      IncidentType.seed(next);
+      IncidentType.seed((error, results) => {
+        incidentTypes = results;
+        next(error, results);
+      });
     },
 
     function seedPlans(incidentTypes, next) {
@@ -266,7 +282,50 @@ function boot() {
         procedures[index].primary = _.sampleSize(roles, 1);
         procedures[index].supportive = _.sampleSize(roles, 2);
       });
-      Procedure.insertMany(procedures, next);
+      Procedure.insertMany(procedures, (error) => next(error));
+    },
+
+    function clearTasks(next) {
+      Task.deleteMany(function ( /*error, results*/ ) {
+        next();
+      });
+    },
+
+    function clearActions(next) {
+      Action.deleteMany(function ( /*error, results*/ ) {
+        next();
+      });
+    },
+
+    function clearIncidents(next) {
+      Incident.deleteMany(function ( /*error, results*/ ) {
+        next();
+      });
+    },
+
+    function seedIncidents(next) {
+      const incidents = Incident.fake(incidentTypes.length);
+      _.forEach(incidentTypes, function (incidentType, index) {
+        incidents[index].type = incidentType;
+      });
+      Incident.insertMany(incidents, next);
+    },
+
+    function seedActions(incidents, next) {
+      const actions = Action.fake(incidents.length);
+      _.forEach(incidents, function (incident, index) {
+        actions[index].incident = incident;
+      });
+      Action.insertMany(actions, next);
+    },
+
+    function seedTasks(actions, next) {
+      const tasks = Task.fake(actions.length);
+      _.forEach(actions, function (action, index) {
+        tasks[index].action = action;
+        tasks[index].number = (index % 2) + 1;
+      });
+      Task.insertMany(tasks, next);
     }
 
   ], function (error, results) {

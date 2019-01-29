@@ -284,6 +284,48 @@
           "put",
           "patch"
         ]
+      },
+      {
+        "resource": "Incident",
+        "schema": "https://emis-incident.herokuapp.com/v1/incidents/schema",
+        "link": "https://emis-incident.herokuapp.com/v1/incidents",
+        "scopes": [
+          "incident:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
+      },
+      {
+        "resource": "Action",
+        "schema": "https://emis-incident.herokuapp.com/v1/actions/schema",
+        "link": "https://emis-incident.herokuapp.com/v1/actions",
+        "scopes": [
+          "action:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
+      },
+      {
+        "resource": "Task",
+        "schema": "https://emis-incident.herokuapp.com/v1/tasks/schema",
+        "link": "https://emis-incident.herokuapp.com/v1/tasks",
+        "scopes": [
+          "task:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
       }
     ]
   },
@@ -315,7 +357,7 @@
     "@codetanzania/emis-incident": ">=1.0.0",
     "@codetanzania/emis-incident-type": ">=1.3.2",
     "@codetanzania/emis-questionnaire": ">=1.1.1",
-    "@codetanzania/emis-resource": ">=1.2.2",
+    "@codetanzania/emis-resource": ">=1.3.0",
     "@codetanzania/emis-role": ">=1.1.2",
     "@codetanzania/emis-stakeholder": ">=1.2.2",
     "@lykmapipo/env": ">=0.3.3",
