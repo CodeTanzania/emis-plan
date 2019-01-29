@@ -90,6 +90,20 @@
         ]
       },
       {
+        "resource": "AlertSource",
+        "schema": "https://emis-plan.herokuapp.com/v1/alertsources/schema",
+        "link": "https://emis-plan.herokuapp.com/v1/alertsources",
+        "scopes": [
+          "alertsource:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
+      },
+      {
         "resource": "Alert",
         "schema": "https://emis-plan.herokuapp.com/v1/alerts/schema",
         "link": "https://emis-plan.herokuapp.com/v1/alerts",
@@ -286,18 +300,19 @@
     "grunt-mocha-test": "^0.13.3",
     "jshint-stylish": "^2.2.1",
     "mocha": "^5.2.0",
-    "mongoose": ">=5.4.6",
+    "mongoose": ">=5.4.7",
     "sinon": "^7.2.3",
     "sinon-chai": "^3.3.0",
     "sinon-mongoose": "^2.2.1",
     "supertest": "^3.4.2"
   },
   "peerDependencies": {
-    "mongoose": ">=5.4.6"
+    "mongoose": ">=5.4.7"
   },
   "dependencies": {
-    "@codetanzania/emis-alert": ">=1.2.2",
+    "@codetanzania/emis-alert": ">=1.3.0",
     "@codetanzania/emis-feature": ">=1.1.1",
+    "@codetanzania/emis-incident": ">=1.0.0",
     "@codetanzania/emis-incident-type": ">=1.3.2",
     "@codetanzania/emis-questionnaire": ">=1.1.1",
     "@codetanzania/emis-resource": ">=1.2.2",

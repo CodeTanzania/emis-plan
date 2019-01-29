@@ -18,7 +18,12 @@ const { Permission, permissionRouter } = require('@lykmapipo/permission');
 const { Feature, featureRouter } = require('@codetanzania/emis-feature');
 const { Role, roleRouter } = require('@codetanzania/emis-role');
 const { Party, partyRouter } = require('@codetanzania/emis-stakeholder');
-const { Alert, alertRouter } = require('@codetanzania/emis-alert');
+const {
+  AlertSource,
+  Alert,
+  alertSourceRouter,
+  alertRouter
+} = require('@codetanzania/emis-alert');
 const {
   Warehouse,
   Item,
@@ -73,6 +78,7 @@ app.mount(featureRouter);
 app.mount(permissionRouter);
 app.mount(roleRouter);
 app.mount(partyRouter);
+app.mount(alertSourceRouter);
 app.mount(alertRouter);
 app.mount(warehouseRouter);
 app.mount(itemRouter);
@@ -154,6 +160,12 @@ function boot() {
     function seedParties(next) {
       Party.seed(function (error, results) {
         parties = results;
+        next();
+      });
+    },
+
+    function seedAlertSources(next) {
+      AlertSource.seed(function ( /*error, results*/ ) {
         next();
       });
     },
