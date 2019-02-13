@@ -72,7 +72,7 @@ connect(error => {
   });
 
   // expose api schemas
-  app.get(`/v${apiVersion}/schemas`, function (request, response) {
+  app.get(`/${apiVersion}/schemas`, function (request, response) {
     const schema = jsonSchema();
     response.status(200);
     response.json(schema);

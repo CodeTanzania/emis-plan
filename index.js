@@ -129,8 +129,7 @@ exports.procedureRouter = procedureRouter;
  * @since 1.0.0
  * @version 0.1.0
  */
-exports.apiVersion = planRouter.apiVersion;
-
+exports.apiVersion = planRouter.version;
 
 /* export app */
 Object.defineProperty(exports, 'app', {
