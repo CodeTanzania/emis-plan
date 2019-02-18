@@ -21,10 +21,10 @@
 
 
 /* dependencies */
-const _ = require('lodash');
+const { pkg } = require('@lykmapipo/common');
 const { include } = require('@lykmapipo/include');
+const { apiVersion } = require('@lykmapipo/env');
 const app = require('@lykmapipo/express-common');
-const pkg = include(__dirname, 'package.json');
 const Plan = include(__dirname, 'lib', 'plan.model');
 const Activity = include(__dirname, 'lib', 'activity.model');
 const Procedure = include(__dirname, 'lib', 'procedure.model');
@@ -42,10 +42,10 @@ const procedureRouter = include(__dirname, 'lib', 'procedure.http.router');
  * @since 1.0.0
  * @version 0.1.0
  */
-exports.info = _.merge({}, _.pick(pkg, [
+exports.info = pkg(
   'name', 'description', 'version', 'license',
   'homepage', 'repository', 'bugs', 'sandbox', 'contributors'
-]));
+);
 
 
 /**
@@ -129,7 +129,7 @@ exports.procedureRouter = procedureRouter;
  * @since 1.0.0
  * @version 0.1.0
  */
-exports.apiVersion = planRouter.version;
+exports.apiVersion = apiVersion();
 
 /* export app */
 Object.defineProperty(exports, 'app', {

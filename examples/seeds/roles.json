@@ -1,66 +1,34 @@
 [
-{"name":"Ward Disaster Committee","abbreviation":"WDC"},
-{"name":"District Disaster Committee","abbreviation":"DDC"},
-{"name":"Regional Disaster Committee","abbreviation":"RDC"},
-{"name":"Tanzania Disaster Management Agency","abbreviation":"TDMA"},
-{"name":"Tanzania Disaster Management Governing Council","abbreviation":"TDMGC"},
-{"name":"Regional Disaster Management Coordinator","abbreviation":"RDMC"},
-{"name":"Non-Governmental Organizations Representative","abbreviation":"NGOR"},
-{"name":"Private Sector Representative","abbreviation":"PSR"},
-{"name":"Tanzania Red Cross Society","abbreviation":"TRCS"},
-{"name":"Humanitarian and Voluntary Organization","abbreviation":"HVO"},
-{"name":"Religious Organization Representative","abbreviation":"ROR"},
-{"name":"District Council Management","abbreviation":"DCM"},
-{"name":"District Disaster Management Coordinator","abbreviation":"DDMC"},
-{"name":"Village Disaster Committee","abbreviation":"VDC"},
-{"name":"Village Management Team","abbreviation":"VMT"},
-{"name":"Regional Commissioner Office","abbreviation":"RCO"},
-{"name":"Tanzania People Police Force","abbreviation":"TPPF"},
-{"name":"Tanzania Fire and Rescue Force","abbreviation":"TFRF"},
-{"name":"Tanzania People’s Defense Force","abbreviation":"TPDF"}
-,
-{"name":"Hospital","abbreviation":"HOSPITAL"},
-{"name":"Ambulance Service","abbreviation":"AS"},
-{"name":"Tanzania National Roads Agency","abbreviation":"TANROAD"},
-{"name":"Tanzania Electric Supply Company","abbreviation":"TANESCO"},
-{"name":"Dar es Salaam Water and Sewerage Authority","abbreviation":"DAWASA"},
-{"name":"Telephone Company","abbreviation":"TC"},
-{"name":"Tanzania Meteorological Agency","abbreviation":"TMA"},
-{"name":"Media","abbreviation":"MEDIA"},
-{"name":"Tanzania Scouts Association","abbreviation":"TCA"},
-{"name":"Non-Governmental Organization","abbreviation":"NGO"},
-{"name":"Voluntary Organization","abbreviation":"VO"},
-{"name":"Faith-Based Organization","abbreviation":"FBO"},
-{"name":"Community-Based Organization","abbreviation":"CBO"},
-{"name":"Municipal Council","abbreviation":"MC"},
-{"name":"Public and Private Transport Agency","abbreviation":"PPTA"},
-{"name":"Ministry of Health and Social Welfare","abbreviation":"MoHSW"},
-{"name":"Prime Minister's Office-Regional Administrative and Local Government","abbreviation":"PMO-RALG"},
-{"name":"Ministry of Water","abbreviation":"MoW"},
-{"name":"Ministry of Lands, Housing and Settlement Development","abbreviation":"MoLHSD"},
-{"name":"Prime Minister's Office","abbreviation":"PMO"},
-{"name":"Civil Society Organization","abbreviation":"CSO"},
-{"name":"National Disaster Management Committee","abbreviation":"NADMAC"},
-{"name":"Tanzania Meteorological Agency","abbreviation":"TMA"},
-{"name":"Ministry of Home Affairs","abbreviation":"MoHA"},
-{"name":"Ministry of Agriculture","abbreviation":"MoA"},
-{"name":"Ministry of Forestry","abbreviation":"MoF"},
-{"name":"MInistry of Infrastrure","abbreviation":"MoI"},
-{"name":"Surface and Marine Transport Regulatory Assessment","abbreviation":"SUMATRA"},
-{"name":"Tanzania Ports Authority","abbreviation":"TPA"},
-{"name":"Shipping Companies","abbreviation":"SC"},
-{"name":"Tanzania Civil Aviation Authority","abbreviation":"TCAA"},
-{"name":"Airlines","abbreviation":"AIRLINE"},
-{"name":"Ministry of Energy and Minerals","abbreviation":"MoEM"},
-{"name":"Ministry of Information and Communication","abbreviation":"MoIC"},
-{"name":"National Environment Management Council","abbreviation":"NEMC"},
-{"name":"Energy and Water Utilities Regulatory Authority","abbreviation":"EWURA"},
-{"name":"Oil Facility Owners","abbreviation":"OFO"},
-{"name":"Ministry of Defence (Navy)","abbreviation":"MoDv"},
-{"name":"Tanzania Atomic Energy Agency","abbreviation":"TAEA"},
-{"name":"Ward Executive Officer","abbreviation":"WEO"},
-{"name":"Village Executive Officer","abbreviation":"VEO"},
-{"name":"ICT Officer","abbreviation":"ICTO"},
-{"name":"Ward Management Team","abbreviation":"WMT"},
-{"name":"Village Disaster Management Coordinator","abbreviation":"VDMC"}
-]
+{
+  "name": "Region Disaster Committee"
+},
+{
+  "name": "Regional Disaster Management Coordinator"
+},
+{
+  "name": "District Disaster Committee"
+},
+{
+  "name": "District Disaster Management Coordinator"
+},
+{
+  "name": "Ward Disaster Committee"
+},
+{
+  "name": "Ward Management Team"
+},
+{
+  "name": "Village Disaster Committee"
+},
+{
+  "name": "Village Management Team"
+},
+{
+  "name": "Ward Executive Officer"
+},
+{
+  "name": "Village Executive Officer"
+},
+{
+  "name": "ICT Officer"
+}]

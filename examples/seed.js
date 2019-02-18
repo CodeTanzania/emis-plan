@@ -56,6 +56,7 @@ let seedEnd;
 let incidentTypes;
 let features;
 let warehouses;
+let wards;
 let indicators;
 let items;
 let alertsources;
@@ -108,6 +109,7 @@ const seedFeatures = next => {
     features = seeded;
     warehouses =
       _.filter(features, feature => feature.family === 'Warehouse');
+    wards = _.filter(features, feature => feature.type === 'Ward');
     next(error);
   });
 };
@@ -147,7 +149,13 @@ const seedRoles = next => {
 };
 
 const seedParties = next => {
-  Party.seed((error, seeded) => {
+  parties = include(__dirname, 'seeds', 'parties');
+  parties = _.map(parties, party => {
+    party.location = _.sample(wards);
+    party.role = _.sample(roles);
+    return party;
+  });
+  Party.seed(parties, (error, seeded) => {
     log('parties', error, seeded);
     parties = seeded;
     next(error);
@@ -171,10 +179,10 @@ const seedQuestionnaires = next => {
 };
 
 const seedStocks = next => { //TODO use seed file
-  stocks = _.map(items, (item, index) => {
+  stocks = _.map(items, item => {
     return {
-      store: warehouses[index % warehouses.length],
-      owner: parties[index % parties.length],
+      store: _.sample(warehouses),
+      owner: _.sample(parties),
       item: item,
       quantity: Math.ceil(Math.random() * 1000),
       minAllowed: Math.ceil(Math.random() * 10),
