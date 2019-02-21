@@ -344,15 +344,15 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-mocha-test": "^0.13.3",
     "jshint-stylish": "^2.2.1",
-    "mocha": "^5.2.0",
-    "mongoose": ">=5.4.13",
+    "mocha": "^6.0.0",
+    "mongoose": ">=5.4.14",
     "sinon": "^7.2.4",
     "sinon-chai": "^3.3.0",
     "sinon-mongoose": "^2.2.1",
     "supertest": "^3.4.2"
   },
   "peerDependencies": {
-    "mongoose": ">=5.4.13"
+    "mongoose": ">=5.4.14"
   },
   "dependencies": {
     "@codetanzania/emis-alert": ">=1.3.0",
@@ -361,11 +361,12 @@
     "@codetanzania/emis-incident-type": ">=1.4.0",
     "@codetanzania/emis-questionnaire": ">=1.2.3",
     "@codetanzania/emis-resource": ">=1.3.0",
-    "@codetanzania/emis-role": ">=1.3.0",
-    "@codetanzania/emis-stakeholder": ">=1.3.1",
+    "@codetanzania/emis-role": ">=1.4.0",
+    "@codetanzania/emis-stakeholder": ">=1.4.0",
     "@lykmapipo/env": ">=0.5.0",
     "@lykmapipo/express-common": ">=0.10.2",
-    "@lykmapipo/mongoose-common": ">=0.11.0",
+    "@lykmapipo/mongoose-common": ">=0.12.0",
+    "@lykmapipo/mongoose-exportable": ">=0.2.0",
     "@lykmapipo/permission": ">=0.7.0",
     "async": ">=2.6.2",
     "lodash": ">=4.17.11",
