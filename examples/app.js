@@ -6,6 +6,7 @@ const app = require('@lykmapipo/express-common');
 const { connect } = require('@lykmapipo/mongoose-common');
 const { include } = require('@lykmapipo/include');
 const { jsonSchema } = require('@lykmapipo/mongoose-common');
+const { predefineRouter } = require('@lykmapipo/predefine');
 const { permissionRouter } = require('@lykmapipo/permission');
 const { featureRouter } = require('@codetanzania/emis-feature');
 const { roleRouter } = require('@codetanzania/emis-role');
@@ -38,6 +39,7 @@ const {
 
 
 /* mount routers */
+app.mount(predefineRouter);
 app.mount(incidentTypeRouter);
 app.mount(indicatorRouter);
 app.mount(questionRouter);

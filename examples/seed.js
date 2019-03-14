@@ -10,6 +10,7 @@ const { connect, clear } = require('@lykmapipo/mongoose-common');
 const { IncidentType } = require('@codetanzania/emis-incident-type');
 const { Feature } = require('@codetanzania/emis-feature');
 const { Permission } = require('@lykmapipo/permission');
+const { Predefine } = require('@lykmapipo/predefine');
 const { Role } = require('@codetanzania/emis-role');
 const { Party } = require('@codetanzania/emis-stakeholder');
 const {
@@ -53,6 +54,7 @@ const log = (stage, error, result) => {
 /* refs */
 let seedStart;
 let seedEnd;
+let predefines;
 let incidentTypes;
 let features;
 let warehouses;
@@ -79,14 +81,26 @@ let tasks;
 // clear fakes
 const cleanup = next => {
   const models = [
-    'Adjsustment', 'Stock', 'Procedure', 'Activity',
-    'Plan', 'Task', 'Action', 'Incident'
+    'Task', 'Action', 'Incident', 'Alert',
+    'Adjustment', 'Questionnaire', 'Question',
+    'Procedure', 'Activity', 'Plan', 'Stock',
+    'Party', 'Role', 'AlertSource', 'Item',
+    'Indicator', 'Feature', 'IncidentType',
+    'Permission', 'Predefine'
   ];
   clear(models, (error) => next(error));
 };
 
 
 // with no deps
+const seedPredefines = next => {
+  Predefine.seed((error, seeded) => {
+    log('predefines', error, seeded);
+    predefines = seeded;
+    next(error);
+  });
+};
+
 const seedPermissions = next => {
   Permission.seed((error, seeded) => {
     log('permissions', error, seeded);
@@ -311,7 +325,7 @@ const seedTasks = next => { //TODO use seed file
 
 // stage one seeding
 const seedStageOne = next => parallel([
-  seedPermissions, seedIncidentTypes,
+  seedPredefines, seedPermissions, seedIncidentTypes,
   seedFeatures, seedIndicators,
   seedItems, seedAlertSources
 ], (error) => next(error));

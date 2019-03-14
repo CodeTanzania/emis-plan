@@ -1,0 +1,76 @@
+[
+{
+  "namespace": "ItemUnit",
+  "key": "unit",
+  "value": "bag"
+},
+{
+  "namespace": "ItemUnit",
+  "key": "unit",
+  "value": "box"
+},
+{
+  "namespace": "ItemUnit",
+  "key": "unit",
+  "value": "carton"
+},
+{
+  "namespace": "ItemUnit",
+  "key": "unit",
+  "value": "drum"
+},
+{
+  "namespace": "ItemUnit",
+  "key": "unit",
+  "value": "dozen"
+},
+{
+  "namespace": "ItemUnit",
+  "key": "unit",
+  "value": "gallon"
+},
+{
+  "namespace": "ItemUnit",
+  "key": "unit",
+  "value": "kit"
+},
+{
+  "namespace": "ItemUnit",
+  "key": "unit",
+  "value": "pallet"
+},
+{
+  "namespace": "ItemUnit",
+  "key": "unit",
+  "value": "piece"
+},
+{
+  "namespace": "ItemUnit",
+  "key": "unit",
+  "value": "bucket"
+},
+{
+  "namespace": "ItemUnit",
+  "key": "unit",
+  "value": "bottle"
+},
+{
+  "namespace": "ItemUnit",
+  "key": "unit",
+  "value": "crate"
+},
+{
+  "namespace": "ItemUnit",
+  "key": "unit",
+  "value": "set"
+},
+{
+  "namespace": "ItemUnit",
+  "key": "unit",
+  "value": "bale"
+},
+{
+  "namespace": "ItemUnit",
+  "key": "unit",
+  "value": "roll"
+}]
