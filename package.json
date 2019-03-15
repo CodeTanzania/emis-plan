@@ -32,11 +32,13 @@
     "procedures",
     "sop"
   ],
-  "contributors": [{
-    "name": "lykmapipo",
-    "email": "lallyelias87@gmail.com",
-    "url": "https://github.com/lykmapipo"
-  }],
+  "contributors": [
+    {
+      "name": "lykmapipo",
+      "email": "lallyelias87@gmail.com",
+      "url": "https://github.com/lykmapipo"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CodeTanzania/emis-plan/issues",
@@ -48,7 +50,8 @@
     "apidoc": "https://lykmapipo.github.io/plan/",
     "client_id": "",
     "client_secret": "",
-    "urls": [{
+    "urls": [
+      {
         "resource": "predefine",
         "schema": "https://emis-plan.herokuapp.com/v1/predefines/schema",
         "link": "https://emis-plan.herokuapp.com/v1/predefines",
@@ -57,6 +60,7 @@
         ],
         "methods": [
           "get",
+          "post",
           "put",
           "patch"
         ]
@@ -379,7 +383,7 @@
     "@lykmapipo/mongoose-common": ">=0.12.0",
     "@lykmapipo/mongoose-exportable": ">=0.2.0",
     "@lykmapipo/permission": ">=0.7.0",
-    "@lykmapipo/predefine": ">=0.1.0",
+    "@lykmapipo/predefine": ">=0.1.1",
     "async": ">=2.6.2",
     "lodash": ">=4.17.11",
     "mongoose-geojson-schemas": ">=0.10.1",
