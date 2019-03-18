@@ -354,7 +354,7 @@
     "chai": "^4.2.0",
     "grunt": "^1.0.3",
     "grunt-apidoc": "^0.11.0",
-    "grunt-contrib-jshint": "^2.0.0",
+    "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-mocha-test": "^0.13.3",
     "jshint-stylish": "^2.2.1",
@@ -363,7 +363,7 @@
     "sinon": "^7.2.7",
     "sinon-chai": "^3.3.0",
     "sinon-mongoose": "^2.2.1",
-    "supertest": "^4.0.0"
+    "supertest": "^4.0.2"
   },
   "peerDependencies": {
     "mongoose": ">=5.4.19"
