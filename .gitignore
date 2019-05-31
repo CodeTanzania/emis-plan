@@ -29,3 +29,6 @@ node_modules
 startup.sh
 spec/intergration.spec.js
 config
+
+# Editor specific configs
+.nvimrc
