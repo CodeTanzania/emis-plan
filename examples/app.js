@@ -6,13 +6,13 @@ const app = require('@lykmapipo/express-common');
 const { connect } = require('@lykmapipo/mongoose-common');
 const { include } = require('@lykmapipo/include');
 const { jsonSchema } = require('@lykmapipo/mongoose-common');
-const { predefineRouter } = require('@lykmapipo/predefine');
 const { permissionRouter } = require('@lykmapipo/permission');
 const { featureRouter } = require('@codetanzania/emis-feature');
 const { roleRouter } = require('@codetanzania/emis-role');
 const { partyRouter } = require('@codetanzania/emis-stakeholder');
 const { alertSourceRouter, alertRouter } = require('@codetanzania/emis-alert');
 const { incidentTypeRouter } = require('@codetanzania/emis-incident-type');
+const { predefineRouter } = require('@lykmapipo/predefine');
 const {
   warehouseRouter,
   itemRouter,
@@ -24,11 +24,11 @@ const {
   questionRouter,
   questionnaireRouter
 } = require('@codetanzania/emis-questionnaire');
-const {
-  incidentRouter,
-  actionRouter,
-  taskRouter
-} = require('@codetanzania/emis-incident');
+// const {
+//   incidentRouter,
+//   actionRouter,
+//   taskRouter
+// } = require('@codetanzania/emis-incident');
 const {
   planRouter,
   activityRouter,
@@ -57,9 +57,9 @@ app.mount(adjustmentRouter);
 app.mount(planRouter);
 app.mount(activityRouter);
 app.mount(procedureRouter);
-app.mount(incidentRouter);
-app.mount(actionRouter);
-app.mount(taskRouter);
+// app.mount(incidentRouter);
+// app.mount(actionRouter);
+// app.mount(taskRouter);
 
 
 // establish mongodb connection

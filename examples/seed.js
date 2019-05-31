@@ -2,7 +2,7 @@
 
 
 /* dependencies */
-const path = require('path');
+// const path = require('path');
 const _ = require('lodash');
 const { waterfall, parallel } = require('async');
 const { include } = require('@lykmapipo/include');
@@ -32,11 +32,11 @@ const {
   Activity,
   Procedure,
 } = include(__dirname, '..');
-const {
-  Incident,
-  Action,
-  Task
-} = require('@codetanzania/emis-incident');
+// const {
+//   Incident,
+//   Action,
+//   Task
+// } = require('@codetanzania/emis-incident');
 
 
 // naive logger
@@ -73,9 +73,9 @@ let plans;
 let activities;
 let procedures;
 let alerts;
-let incidents;
-let actions;
-let tasks;
+// let incidents;
+// let actions;
+// let tasks;
 
 
 // clear fakes
@@ -284,43 +284,43 @@ const seedAlerts = next => {
   });
 };
 
-const seedIncidents = next => { //TODO use seed file
-  incidents = Incident.fake(incidentTypes.length);
-  _.forEach(incidentTypes, (incidentType, index) => {
-    incidents[index].type = incidentType;
-  });
-  Incident.insertMany(incidents, (error, seeded) => {
-    log('incidents', error, seeded);
-    incidents = seeded;
-    next(error);
-  });
-};
+// const seedIncidents = next => { //TODO use seed file
+//   incidents = Incident.fake(incidentTypes.length);
+//   _.forEach(incidentTypes, (incidentType, index) => {
+//     incidents[index].type = incidentType;
+//   });
+//   Incident.insertMany(incidents, (error, seeded) => {
+//     log('incidents', error, seeded);
+//     incidents = seeded;
+//     next(error);
+//   });
+// };
 
-const seedActions = next => { //TODO use seed file
-  actions = Action.fake(incidents.length);
-  _.forEach(incidents, (incident, index) => {
-    actions[index].incident = incident;
-  });
-  Action.insertMany(actions, (error, seeded) => {
-    log('actions', error, seeded);
-    actions = seeded;
-    next(error);
-  });
-};
+// const seedActions = next => { //TODO use seed file
+//   actions = Action.fake(incidents.length);
+//   _.forEach(incidents, (incident, index) => {
+//     actions[index].incident = incident;
+//   });
+//   Action.insertMany(actions, (error, seeded) => {
+//     log('actions', error, seeded);
+//     actions = seeded;
+//     next(error);
+//   });
+// };
 
 
-const seedTasks = next => { //TODO use seed file
-  tasks = Task.fake(actions.length);
-  _.forEach(actions, (action, index) => {
-    tasks[index].action = action;
-    tasks[index].number = (index % 2) + 1;
-  });
-  Task.insertMany(tasks, (error, seeded) => {
-    log('tasks', error, seeded);
-    tasks = seeded;
-    next(error);
-  });
-};
+// const seedTasks = next => { //TODO use seed file
+//   tasks = Task.fake(actions.length);
+//   _.forEach(actions, (action, index) => {
+//     tasks[index].action = action;
+//     tasks[index].number = (index % 2) + 1;
+//   });
+//   Task.insertMany(tasks, (error, seeded) => {
+//     log('tasks', error, seeded);
+//     tasks = seeded;
+//     next(error);
+//   });
+// };
 
 
 // stage one seeding
@@ -341,8 +341,8 @@ const seedStageTwo = next => waterfall([
 const seedStageThree = next => waterfall([
   seedQuestions, seedQuestionnaires,
   seedAdjustments, seedAlerts,
-  seedIncidents, seedActions,
-  seedTasks
+  // seedIncidents, seedActions,
+  // seedTasks
 ], (error) => next(error));
 
 
