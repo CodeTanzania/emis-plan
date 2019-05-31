@@ -31,6 +31,10 @@
     "YARN_PRODUCTION":
     {
       "value": "false"
+    },
+    "HEROKU":
+    {
+      "value": "true"
     }
   }
 }

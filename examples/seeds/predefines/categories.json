@@ -1,0 +1,19 @@
+[
+{
+  "namespace": "ItemCategory",
+  "key": "category",
+  "value": "Equipment",
+  "color": "#3366FF"
+},
+{
+  "namespace": "ItemCategory",
+  "key": "category",
+  "value": "Consumable",
+  "color": "#88E729"
+},
+{
+  "namespace": "ItemCategory",
+  "key": "category",
+  "value": "Vehicle",
+  "color": "#FFFF00"
+}]

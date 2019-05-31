@@ -1,0 +1,69 @@
+[
+{
+  "indicator": "Water supply before the disaster",
+  "assess": "Situation",
+  "stage": "During",
+  "phase": "Response",
+  "type": "select_one",
+  "label": "Was there water supply before the disaster?",
+  "choices": [
+  {
+    "label": "Yes",
+    "name": "yes"
+  },
+  {
+    "label": "No",
+    "name": "no"
+  }]
+},
+{
+  "indicator": "Affectation to Water supply",
+  "assess": "Situation",
+  "stage": "During",
+  "phase": "Response",
+  "type": "select_one",
+  "label": "Are there any effects to the water supply quality?",
+  "choices": [
+  {
+    "label": "Yes",
+    "name": "yes"
+  },
+  {
+    "label": "No",
+    "name": "no"
+  }]
+},
+{
+  "indicator": "Affectation to Water supply",
+  "assess": "Situation",
+  "stage": "During",
+  "phase": "Response",
+  "type": "select_one",
+  "label": "Are there any effects to the water supply quantity?",
+  "choices": [
+  {
+    "label": "Yes",
+    "name": "yes"
+  },
+  {
+    "label": "No",
+    "name": "no"
+  }]
+},
+{
+  "indicator": "Water Availability",
+  "assess": "Situation",
+  "stage": "During",
+  "phase": "Response",
+  "type": "select_one",
+  "label": "Are there any effects to the water availability?",
+  "choices": [
+  {
+    "label": "Yes",
+    "name": "yes"
+  },
+  {
+    "label": "No",
+    "name": "no"
+  }]
+}]
