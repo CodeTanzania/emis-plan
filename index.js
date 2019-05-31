@@ -1,6 +1,5 @@
 'use strict';
 
-
 /**
  * @module Plan
  * @name Plan
@@ -19,7 +18,6 @@
  *
  */
 
-
 /* dependencies */
 const { pkg } = require('@lykmapipo/common');
 const { include } = require('@lykmapipo/include');
@@ -32,7 +30,6 @@ const planRouter = include(__dirname, 'lib', 'plan.http.router');
 const activityRouter = include(__dirname, 'lib', 'activity.http.router');
 const procedureRouter = include(__dirname, 'lib', 'procedure.http.router');
 
-
 /**
  * @name info
  * @description package information
@@ -43,10 +40,16 @@ const procedureRouter = include(__dirname, 'lib', 'procedure.http.router');
  * @version 0.1.0
  */
 exports.info = pkg(
-  'name', 'description', 'version', 'license',
-  'homepage', 'repository', 'bugs', 'sandbox', 'contributors'
+  'name',
+  'description',
+  'version',
+  'license',
+  'homepage',
+  'repository',
+  'bugs',
+  'sandbox',
+  'contributors'
 );
-
 
 /**
  * @name Plan
@@ -59,7 +62,6 @@ exports.info = pkg(
  */
 exports.Plan = Plan;
 
-
 /**
  * @name Activity
  * @description Activity model
@@ -70,7 +72,6 @@ exports.Plan = Plan;
  * @version 0.1.0
  */
 exports.Activity = Activity;
-
 
 /**
  * @name Procedure
@@ -83,7 +84,6 @@ exports.Activity = Activity;
  */
 exports.Procedure = Procedure;
 
-
 /**
  * @name planRouter
  * @description plan http router
@@ -94,7 +94,6 @@ exports.Procedure = Procedure;
  * @version 0.1.0
  */
 exports.planRouter = planRouter;
-
 
 /**
  * @name activityRouter
@@ -107,7 +106,6 @@ exports.planRouter = planRouter;
  */
 exports.activityRouter = activityRouter;
 
-
 /**
  * @name procedureRouter
  * @description procedure http router
@@ -118,7 +116,6 @@ exports.activityRouter = activityRouter;
  * @version 0.1.0
  */
 exports.procedureRouter = procedureRouter;
-
 
 /**
  * @name apiVersion
@@ -139,5 +136,5 @@ Object.defineProperty(exports, 'app', {
     app.mount(activityRouter);
     app.mount(procedureRouter);
     return app;
-  }
+  },
 });

@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 // const path = require('path');
 const _ = require('lodash');
@@ -16,28 +15,16 @@ const { Party } = require('@codetanzania/emis-stakeholder');
 const {
   Indicator,
   Question,
-  Questionnaire
+  Questionnaire,
 } = require('@codetanzania/emis-questionnaire');
-const {
-  Item,
-  Stock,
-  Adjustment
-} = require('@codetanzania/emis-resource');
-const {
-  AlertSource,
-  Alert
-} = require('@codetanzania/emis-alert');
-const {
-  Plan,
-  Activity,
-  Procedure,
-} = include(__dirname, '..');
+const { Item, Stock, Adjustment } = require('@codetanzania/emis-resource');
+const { AlertSource, Alert } = require('@codetanzania/emis-alert');
+const { Plan, Activity, Procedure } = include(__dirname, '..');
 // const {
 //   Incident,
 //   Action,
 //   Task
 // } = require('@codetanzania/emis-incident');
-
 
 // naive logger
 const log = (stage, error, result) => {
@@ -49,7 +36,6 @@ const log = (stage, error, result) => {
     console.info(`${stage} seed result`, val);
   }
 };
-
 
 /* refs */
 let seedStart;
@@ -77,20 +63,32 @@ let alerts;
 // let actions;
 // let tasks;
 
-
 // clear fakes
 const cleanup = next => {
   const models = [
-    'Task', 'Action', 'Incident', 'Alert',
-    'Adjustment', 'Questionnaire', 'Question',
-    'Procedure', 'Activity', 'Plan', 'Stock',
-    'Party', 'Role', 'AlertSource', 'Item',
-    'Indicator', 'Feature', 'IncidentType',
-    'Permission', 'Predefine'
+    'Task',
+    'Action',
+    'Incident',
+    'Alert',
+    'Adjustment',
+    'Questionnaire',
+    'Question',
+    'Procedure',
+    'Activity',
+    'Plan',
+    'Stock',
+    'Party',
+    'Role',
+    'AlertSource',
+    'Item',
+    'Indicator',
+    'Feature',
+    'IncidentType',
+    'Permission',
+    'Predefine',
   ];
-  clear(models, (error) => next(error));
+  clear(models, error => next(error));
 };
-
 
 // with no deps
 const seedPredefines = next => {
@@ -121,8 +119,7 @@ const seedFeatures = next => {
   Feature.seed((error, seeded) => {
     log('features', error, seeded);
     features = seeded;
-    warehouses =
-      _.filter(features, feature => feature.family === 'Warehouse');
+    warehouses = _.filter(features, feature => feature.family === 'Warehouse');
     wards = _.filter(features, feature => feature.type === 'Ward');
     next(error);
   });
@@ -151,7 +148,6 @@ const seedAlertSources = next => {
     next(error);
   });
 };
-
 
 // with deps
 const seedRoles = next => {
@@ -192,7 +188,8 @@ const seedQuestionnaires = next => {
   });
 };
 
-const seedStocks = next => { //TODO use seed file
+const seedStocks = next => {
+  //TODO use seed file
   stocks = _.map(items, item => {
     return {
       store: _.sample(warehouses),
@@ -210,12 +207,13 @@ const seedStocks = next => { //TODO use seed file
   });
 };
 
-const seedPlans = next => { //TODO use seed file
+const seedPlans = next => {
+  //TODO use seed file
   plans = _.map(incidentTypes, incidentType => {
     return {
       owner: _.find(parties, { abbreviation: 'DARMAERT' }),
       incidentType: incidentType,
-      boundary: _.find(features, { name: 'Dar-es-salaam' })
+      boundary: _.find(features, { name: 'Dar-es-salaam' }),
     };
   });
   Plan.insertMany(plans, (error, seeded) => {
@@ -225,7 +223,8 @@ const seedPlans = next => { //TODO use seed file
   });
 };
 
-const seedActivities = next => { //TODO use seed file
+const seedActivities = next => {
+  //TODO use seed file
   activities = include(__dirname, 'seeds', 'activities');
   activities = _.map(plans, (plan, index) => {
     return _.map(activities, activity => {
@@ -258,8 +257,9 @@ const seedProcedures = next => {
   });
 };
 
-const seedAdjustments = next => { //TODO use seed file
-  adjustments = _.map(stocks, (stock) => {
+const seedAdjustments = next => {
+  //TODO use seed file
+  adjustments = _.map(stocks, stock => {
     const adjustment = Adjustment.fake();
     adjustment.item = stock.item;
     adjustment.stock = stock;
@@ -308,7 +308,6 @@ const seedAlerts = next => {
 //   });
 // };
 
-
 // const seedTasks = next => { //TODO use seed file
 //   tasks = Task.fake(actions.length);
 //   _.forEach(actions, (action, index) => {
@@ -322,42 +321,59 @@ const seedAlerts = next => {
 //   });
 // };
 
-
 // stage one seeding
-const seedStageOne = next => parallel([
-  seedPredefines, seedPermissions, seedIncidentTypes,
-  seedFeatures, seedIndicators,
-  seedItems, seedAlertSources
-], (error) => next(error));
+const seedStageOne = next =>
+  parallel(
+    [
+      seedPredefines,
+      seedPermissions,
+      seedIncidentTypes,
+      seedFeatures,
+      seedIndicators,
+      seedItems,
+      seedAlertSources,
+    ],
+    error => next(error)
+  );
 
 // stage two seeding
-const seedStageTwo = next => waterfall([
-  seedRoles, seedParties,
-  seedStocks, seedPlans,
-  seedActivities, seedProcedures
-], (error) => next(error));
+const seedStageTwo = next =>
+  waterfall(
+    [
+      seedRoles,
+      seedParties,
+      seedStocks,
+      seedPlans,
+      seedActivities,
+      seedProcedures,
+    ],
+    error => next(error)
+  );
 
 // stage three seeding
-const seedStageThree = next => waterfall([
-  seedQuestions, seedQuestionnaires,
-  seedAdjustments, seedAlerts,
-  // seedIncidents, seedActions,
-  // seedTasks
-], (error) => next(error));
-
+const seedStageThree = next =>
+  waterfall(
+    [
+      seedQuestions,
+      seedQuestionnaires,
+      seedAdjustments,
+      seedAlerts,
+      // seedIncidents, seedActions,
+      // seedTasks
+    ],
+    error => next(error)
+  );
 
 // seed work
 const seed = done => {
   seedStart = Date.now();
   connect(error => {
-    if (error) { return done(error); }
-    waterfall([
-      cleanup, seedStageOne,
-      seedStageTwo, seedStageThree
-    ], done);
+    if (error) {
+      return done(error);
+    }
+    waterfall([cleanup, seedStageOne, seedStageTwo, seedStageThree], done);
   });
 };
-
 
 // do seeding
 seed((error, results = [true]) => {

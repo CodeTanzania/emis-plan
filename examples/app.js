@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const app = require('@lykmapipo/express-common');
 const { connect } = require('@lykmapipo/mongoose-common');
@@ -17,12 +16,12 @@ const {
   warehouseRouter,
   itemRouter,
   stockRouter,
-  adjustmentRouter
+  adjustmentRouter,
 } = require('@codetanzania/emis-resource');
 const {
   indicatorRouter,
   questionRouter,
-  questionnaireRouter
+  questionnaireRouter,
 } = require('@codetanzania/emis-questionnaire');
 // const {
 //   incidentRouter,
@@ -34,9 +33,8 @@ const {
   activityRouter,
   procedureRouter,
   apiVersion,
-  info
+  info,
 } = include(__dirname, '..');
-
 
 /* mount routers */
 app.mount(predefineRouter);
@@ -61,11 +59,12 @@ app.mount(procedureRouter);
 // app.mount(actionRouter);
 // app.mount(taskRouter);
 
-
 // establish mongodb connection
 connect(error => {
   // re-throw if error
-  if (error) { throw error; }
+  if (error) {
+    throw error;
+  }
 
   // expose module info
   app.get('/', (request, response) => {
@@ -74,7 +73,7 @@ connect(error => {
   });
 
   // expose api schemas
-  app.get(`/${apiVersion}/schemas`, function (request, response) {
+  app.get(`/${apiVersion}/schemas`, function(request, response) {
     const schema = jsonSchema();
     response.status(200);
     response.json(schema);
@@ -84,5 +83,4 @@ connect(error => {
   app.start((error, env) => {
     console.log(`visit http://0.0.0.0:${env.PORT}`);
   });
-
 });

@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const { expect } = require('chai');
 const { include } = require('@lykmapipo/include');
@@ -11,9 +10,7 @@ const { Item } = require('@codetanzania/emis-resource');
 const { Questionnaire } = require('@codetanzania/emis-questionnaire');
 const { Procedure, Activity, Plan } = include(__dirname, '..', '..');
 
-
 describe('Procedure Schema', () => {
-
   it('should have plan field', () => {
     const plan = Procedure.path('plan');
 
@@ -117,7 +114,6 @@ describe('Procedure Schema', () => {
   });
 
   it('should have primary roles field', () => {
-
     const primary = Procedure.path('primary');
 
     expect(primary).to.exist;
@@ -133,7 +129,6 @@ describe('Procedure Schema', () => {
   });
 
   it('should have supportive roles field', () => {
-
     const supportive = Procedure.path('supportive');
 
     expect(supportive).to.exist;
@@ -149,7 +144,6 @@ describe('Procedure Schema', () => {
   });
 
   it('should have resources field', () => {
-
     const resources = Procedure.path('resources');
 
     expect(resources).to.exist;
@@ -165,7 +159,6 @@ describe('Procedure Schema', () => {
   });
 
   it('should have assessments field', () => {
-
     const assessments = Procedure.path('assessments');
 
     expect(assessments).to.exist;
@@ -179,5 +172,4 @@ describe('Procedure Schema', () => {
     expect(assessments.options.index).to.be.true;
     expect(assessments.options.autopopulate).to.be.exist;
   });
-
 });
