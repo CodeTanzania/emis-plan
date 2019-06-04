@@ -87,7 +87,7 @@ const cleanup = next => {
     'Permission',
     'Predefine',
   ];
-  clear(models, error => next(error));
+  clear(...models, error => next(error));
 };
 
 // with no deps
@@ -165,7 +165,7 @@ const seedParties = next => {
     party.role = _.sample(roles);
     return party;
   });
-  Party.seed(parties, (error, seeded) => {
+  Party.seed([parties[0]], (error, seeded) => {
     log('parties', error, seeded);
     parties = seeded;
     next(error);
@@ -283,43 +283,6 @@ const seedAlerts = next => {
     next(error);
   });
 };
-
-// const seedIncidents = next => { //TODO use seed file
-//   incidents = Incident.fake(incidentTypes.length);
-//   _.forEach(incidentTypes, (incidentType, index) => {
-//     incidents[index].type = incidentType;
-//   });
-//   Incident.insertMany(incidents, (error, seeded) => {
-//     log('incidents', error, seeded);
-//     incidents = seeded;
-//     next(error);
-//   });
-// };
-
-// const seedActions = next => { //TODO use seed file
-//   actions = Action.fake(incidents.length);
-//   _.forEach(incidents, (incident, index) => {
-//     actions[index].incident = incident;
-//   });
-//   Action.insertMany(actions, (error, seeded) => {
-//     log('actions', error, seeded);
-//     actions = seeded;
-//     next(error);
-//   });
-// };
-
-// const seedTasks = next => { //TODO use seed file
-//   tasks = Task.fake(actions.length);
-//   _.forEach(actions, (action, index) => {
-//     tasks[index].action = action;
-//     tasks[index].number = (index % 2) + 1;
-//   });
-//   Task.insertMany(tasks, (error, seeded) => {
-//     log('tasks', error, seeded);
-//     tasks = seeded;
-//     next(error);
-//   });
-// };
 
 // stage one seeding
 const seedStageOne = next =>
