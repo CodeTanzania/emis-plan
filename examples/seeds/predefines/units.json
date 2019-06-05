@@ -1,76 +1,62 @@
 [
 {
   "namespace": "ItemUnit",
-  "key": "unit",
-  "value": "bag"
+  "bucket": "itemunits",
+  "name": "bag"
 },
 {
   "namespace": "ItemUnit",
-  "key": "unit",
-  "value": "box"
+  "name": "box"
 },
 {
   "namespace": "ItemUnit",
-  "key": "unit",
-  "value": "carton"
+  "name": "carton"
 },
 {
   "namespace": "ItemUnit",
-  "key": "unit",
-  "value": "drum"
+  "name": "drum"
 },
 {
   "namespace": "ItemUnit",
-  "key": "unit",
-  "value": "dozen"
+  "name": "dozen"
 },
 {
   "namespace": "ItemUnit",
-  "key": "unit",
-  "value": "gallon"
+  "name": "gallon"
 },
 {
   "namespace": "ItemUnit",
-  "key": "unit",
-  "value": "kit"
+  "name": "kit"
 },
 {
   "namespace": "ItemUnit",
-  "key": "unit",
-  "value": "pallet"
+  "name": "pallet"
 },
 {
   "namespace": "ItemUnit",
-  "key": "unit",
-  "value": "piece"
+  "name": "piece"
 },
 {
   "namespace": "ItemUnit",
-  "key": "unit",
-  "value": "bucket"
+  "name": "bucket"
 },
 {
   "namespace": "ItemUnit",
-  "key": "unit",
-  "value": "bottle"
+  "name": "bottle"
 },
 {
   "namespace": "ItemUnit",
-  "key": "unit",
-  "value": "crate"
+  "name": "crate"
 },
 {
   "namespace": "ItemUnit",
-  "key": "unit",
-  "value": "set"
+  "name": "set"
 },
 {
   "namespace": "ItemUnit",
-  "key": "unit",
-  "value": "bale"
+  "name": "bale"
 },
 {
   "namespace": "ItemUnit",
-  "key": "unit",
-  "value": "roll"
+  "name": "roll"
 }]
