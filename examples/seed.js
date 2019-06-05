@@ -245,7 +245,7 @@ const seedActivities = next => {
 const seedProcedures = next => {
   procedures = Procedure.fake(activities.length);
   _.forEach(activities, (activity, index) => {
-    procedures[index].activity = activities[0];
+    procedures[index].activity = activity;
     procedures[index].number = (index % 2) + 1;
     procedures[index].primary = _.sampleSize(roles, 1);
     procedures[index].supportive = _.sampleSize(roles, 2);
