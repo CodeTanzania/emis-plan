@@ -64,31 +64,7 @@ let alerts;
 // let tasks;
 
 // clear fakes
-const cleanup = next => {
-  const models = [
-    'Task',
-    'Action',
-    'Incident',
-    'Alert',
-    'Adjustment',
-    'Questionnaire',
-    'Question',
-    'Procedure',
-    'Activity',
-    'Plan',
-    'Stock',
-    'Party',
-    'Role',
-    'AlertSource',
-    'Item',
-    'Indicator',
-    'Feature',
-    'IncidentType',
-    'Permission',
-    'Predefine',
-  ];
-  clear(...models, error => next(error));
-};
+const cleanup = next => clear(next);
 
 // with no deps
 const seedPredefines = next => {
@@ -161,11 +137,11 @@ const seedRoles = next => {
 const seedParties = next => {
   parties = include(__dirname, 'seeds', 'parties');
   parties = _.map(parties, party => {
-    party.location = _.sample(wards);
-    party.role = _.sample(roles);
+    party.location = _.sample(wards).toObject();
+    party.role = _.sample(roles).toObject();
     return party;
   });
-  Party.seed( (error, seeded) => {
+  Party.seed((error, seeded) => {
     log('parties', error, seeded);
     parties = seeded;
     next(error);
@@ -192,9 +168,9 @@ const seedStocks = next => {
   //TODO use seed file
   stocks = _.map(items, item => {
     return {
-      store: _.sample(warehouses),
-      owner: _.sample(parties),
-      item: item,
+      store: _.sample(warehouses).toObject(),
+      owner: _.sample(parties).toObject(),
+      item: item.toObject(), // TODO if you remove .toObject() it will fail
       quantity: Math.ceil(Math.random() * 1000),
       minAllowed: Math.ceil(Math.random() * 10),
       maxAllowed: Math.ceil(Math.random() * 10000),
@@ -334,14 +310,16 @@ const seed = done => {
     if (error) {
       return done(error);
     }
-    waterfall([cleanup, seedStageOne, seedStageTwo, seedStageThree], done);
+    waterfall([seedStageOne, seedStageTwo, seedStageThree], done);
   });
 };
 
 // do seeding
-seed((error, results = [true]) => {
-  seedEnd = Date.now();
-  log('time', null, seedEnd - seedStart);
-  log('final', error, results);
-  process.exit(0);
+cleanup(error => {
+  seed((error, results = [true]) => {
+    seedEnd = Date.now();
+    log('time', null, seedEnd - seedStart);
+    log('final', error, results);
+    process.exit(0);
+  });
 });
