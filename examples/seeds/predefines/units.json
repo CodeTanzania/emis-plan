@@ -1,62 +1,77 @@
 [
-{
-  "namespace": "ItemUnit",
-  "bucket": "itemunits",
-  "name": "bag"
-},
-{
-  "namespace": "ItemUnit",
-  "name": "box"
-},
-{
-  "namespace": "ItemUnit",
-  "name": "carton"
-},
-{
-  "namespace": "ItemUnit",
-  "name": "drum"
-},
-{
-  "namespace": "ItemUnit",
-  "name": "dozen"
-},
-{
-  "namespace": "ItemUnit",
-  "name": "gallon"
-},
-{
-  "namespace": "ItemUnit",
-  "name": "kit"
-},
-{
-  "namespace": "ItemUnit",
-  "name": "pallet"
-},
-{
-  "namespace": "ItemUnit",
-  "name": "piece"
-},
-{
-  "namespace": "ItemUnit",
-  "name": "bucket"
-},
-{
-  "namespace": "ItemUnit",
-  "name": "bottle"
-},
-{
-  "namespace": "ItemUnit",
-  "name": "crate"
-},
-{
-  "namespace": "ItemUnit",
-  "name": "set"
-},
-{
-  "namespace": "ItemUnit",
-  "name": "bale"
-},
-{
-  "namespace": "ItemUnit",
-  "name": "roll"
-}]
+  {
+    "namespace": "ItemUnit",
+    "bucket": "itemunits",
+    "name": "bag"
+  },
+  {
+    "namespace": "ItemUnit",
+    "bucket": "itemunits",
+    "name": "box"
+  },
+  {
+    "namespace": "ItemUnit",
+    "bucket": "itemunits",
+    "name": "carton"
+  },
+  {
+    "namespace": "ItemUnit",
+    "bucket": "itemunits",
+    "name": "drum"
+  },
+  {
+    "namespace": "ItemUnit",
+    "bucket": "itemunits",
+    "name": "dozen"
+  },
+  {
+    "namespace": "ItemUnit",
+    "bucket": "itemunits",
+    "name": "gallon"
+  },
+  {
+    "namespace": "ItemUnit",
+    "bucket": "itemunits",
+    "name": "kit"
+  },
+  {
+    "namespace": "ItemUnit",
+    "bucket": "itemunits",
+    "name": "pallet"
+  },
+  {
+    "namespace": "ItemUnit",
+    "bucket": "itemunits",
+    "name": "piece"
+  },
+  {
+    "namespace": "ItemUnit",
+    "bucket": "itemunits",
+    "name": "bucket"
+  },
+  {
+    "namespace": "ItemUnit",
+    "bucket": "itemunits",
+    "name": "bottle"
+  },
+  {
+    "namespace": "ItemUnit",
+    "bucket": "itemunits",
+    "name": "crate"
+  },
+  {
+    "namespace": "ItemUnit",
+    "bucket": "itemunits",
+    "name": "set"
+  },
+  {
+    "namespace": "ItemUnit",
+    "bucket": "itemunits",
+    "name": "bale"
+  },
+  {
+    "namespace": "ItemUnit",
+    "bucket": "itemunits",
+    "name": "roll"
+  }
+]

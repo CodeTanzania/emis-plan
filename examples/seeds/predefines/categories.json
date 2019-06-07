@@ -1,17 +1,20 @@
 [
-{
-  "namespace": "ItemCategory",
-  "bucket": "itemcategories",
-  "name": "Equipment",
-  "color": "#3366FF"
-},
-{
-  "namespace": "ItemCategory",
-  "name": "Consumable",
-  "color": "#88E729"
-},
-{
-  "namespace": "ItemCategory",
-  "name": "Vehicle",
-  "color": "#FFFF00"
-}]
+  {
+    "namespace": "ItemCategory",
+    "bucket": "itemcategories",
+    "name": "Equipment",
+    "color": "#3366FF"
+  },
+  {
+    "namespace": "ItemCategory",
+    "bucket": "itemcategories",
+    "name": "Consumable",
+    "color": "#88E729"
+  },
+  {
+    "namespace": "ItemCategory",
+    "bucket": "itemcategories",
+    "name": "Vehicle",
+    "color": "#FFFF00"
+  }
+]
