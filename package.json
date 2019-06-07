@@ -361,11 +361,11 @@
     "jshint-stylish": "^2.2.1",
     "mocha": "^6.1.4",
     "mongoose": "^5.5.11",
-    "prettier": "^1.17.1",
+    "prettier": "^1.18.0",
     "supertest": "^4.0.2"
   },
   "peerDependencies": {
-    "mongoose": ">=5.5.12"
+    "mongoose": ">=5.5.13"
   },
   "dependencies": {
     "@codetanzania/emis-alert": "^1.4.0",
@@ -377,7 +377,7 @@
     "@codetanzania/emis-stakeholder": ">=1.6.1",
     "@lykmapipo/common": "^0.19.1",
     "@lykmapipo/env": "^0.7.9",
-    "@lykmapipo/express-common": ">=0.17.4",
+    "@lykmapipo/express-common": ">=0.17.5",
     "@lykmapipo/mongoose-common": "^0.24.0",
     "@lykmapipo/mongoose-exportable": "^0.3.3",
     "@lykmapipo/permission": ">=0.8.1",
