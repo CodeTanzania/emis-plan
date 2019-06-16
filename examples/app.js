@@ -6,6 +6,8 @@ const { connect } = require('@lykmapipo/mongoose-common');
 const { include } = require('@lykmapipo/include');
 const { jsonSchema } = require('@lykmapipo/mongoose-common');
 const { permissionRouter } = require('@lykmapipo/permission');
+const { predefineRouter } = require('@lykmapipo/predefine');
+const { campaignRouter, messageRouter } = require('@lykmapipo/postman');
 const { featureRouter } = require('@codetanzania/emis-feature');
 const { roleRouter } = require('@codetanzania/emis-role');
 const {
@@ -14,7 +16,6 @@ const {
 } = require('@codetanzania/emis-stakeholder');
 const { alertSourceRouter, alertRouter } = require('@codetanzania/emis-alert');
 const { incidentTypeRouter } = require('@codetanzania/emis-incident-type');
-const { predefineRouter } = require('@lykmapipo/predefine');
 const {
   warehouseRouter,
   itemRouter,
@@ -42,6 +43,8 @@ const {
 /* mount routers */
 app.mount(authenticationRouter);
 app.mount(predefineRouter);
+app.mount(campaignRouter);
+app.mount(messageRouter);
 app.mount(incidentTypeRouter);
 app.mount(indicatorRouter);
 app.mount(questionRouter);
