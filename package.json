@@ -368,7 +368,7 @@
     "mongoose": ">=5.6.0"
   },
   "dependencies": {
-    "@codetanzania/emis-alert": "^1.4.0",
+    "@codetanzania/emis-alert": "^1.4.1",
     "@codetanzania/emis-feature": ">=1.4.1",
     "@codetanzania/emis-incident-type": ">=1.5.1",
     "@codetanzania/emis-questionnaire": ">=1.2.3",
