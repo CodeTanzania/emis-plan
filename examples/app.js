@@ -7,13 +7,16 @@ const { include } = require('@lykmapipo/include');
 const { jsonSchema } = require('@lykmapipo/mongoose-common');
 const { permissionRouter } = require('@lykmapipo/permission');
 const { predefineRouter } = require('@lykmapipo/predefine');
-const { campaignRouter, messageRouter } = require('@lykmapipo/postman');
 const { featureRouter } = require('@codetanzania/emis-feature');
 const { roleRouter } = require('@codetanzania/emis-role');
 const {
   partyRouter,
   authenticationRouter,
+  fetchContacts,
 } = require('@codetanzania/emis-stakeholder');
+const { campaignRouter, messageRouter } = require('@lykmapipo/postman')({
+  fetchContacts,
+});
 const { alertSourceRouter, alertRouter } = require('@codetanzania/emis-alert');
 const { incidentTypeRouter } = require('@codetanzania/emis-incident-type');
 const {
