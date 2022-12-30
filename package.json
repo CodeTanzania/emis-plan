@@ -360,7 +360,7 @@
     "grunt-mocha-test": "^0.13.3",
     "handlebars": "^4.1.2",
     "jshint-stylish": "^2.2.1",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "mongoose": "^5.5.11",
     "prettier": "^1.18.2",
     "supertest": "^4.0.2"
